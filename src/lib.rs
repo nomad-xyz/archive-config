@@ -11,13 +11,16 @@ pub mod common;
 pub mod contracts;
 pub mod core_deploy;
 
+pub mod builtin;
+pub use builtin::*;
+
+#[cfg(target_arch = "wasm32")]
+/// Wasm bindings for common operations
+pub mod wasm;
+
 use common::{NameOrDomain, NomadIdentifier};
 use contracts::BridgeContracts;
 use core_deploy::{CoreDeploy, CoreNetwork};
-
-/// Wasm bindings for common operations
-#[cfg(target_arch = "wasm32")]
-pub mod wasm;
 
 /// A Nomad configuration json format
 #[derive(Default, Debug, Clone, serde::Serialize, serde::Deserialize)]

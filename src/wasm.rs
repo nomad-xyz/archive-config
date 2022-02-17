@@ -39,18 +39,26 @@ macro_rules! ret_config {
     };
 }
 
-type JsResult<T> = std::result::Result<T, wasm_bindgen::prelude::JsValue>;
+type JsResult = std::result::Result<JsValue, JsValue>;
 
 /// Convert any display type into a string for javascript errors
 fn format_errs(e: impl std::fmt::Display) -> wasm_bindgen::prelude::JsValue {
     format!("{:#}", e).into()
 }
 
+/// Get a built-in config
+#[wasm_bindgen(js_name = getBuiltin)]
+pub fn get_builtin(name: &str) -> JsResult {
+    ret_config!(crate::builtin::get_builtin(name)
+        .ok_or_else(|| eyre::eyre!("No builtin config found for environment named {}", name))
+        .map_err(format_errs)?)
+}
+
 /// Syntactically validate a config. Throw an error if invalid
 #[wasm_bindgen(js_name = validateConfig)]
-pub fn validate_config(val: &JsValue) -> JsResult<()> {
+pub fn validate_config(val: &JsValue) -> JsResult {
     deser_config!(val);
-    Ok(())
+    Ok(JsValue::NULL)
 }
 
 /// Make a new blank config
@@ -61,7 +69,7 @@ pub fn blank_config() -> JsValue {
 
 /// Parse a json string into a config
 #[wasm_bindgen(js_name = configFromString)]
-pub fn config_from_string(s: &str) -> JsResult<JsValue> {
+pub fn config_from_string(s: &str) -> JsResult {
     let config = serde_json::from_str::<crate::NomadConfig>(s)
         .wrap_err("Unable to deserialize config from string")
         .map_err(format_errs)?;
@@ -71,7 +79,7 @@ pub fn config_from_string(s: &str) -> JsResult<JsValue> {
 
 /// Add a network to the config
 #[wasm_bindgen(js_name = addNetwork)]
-pub fn add_network(config: &JsValue, network: &JsValue) -> JsResult<JsValue> {
+pub fn add_network(config: &JsValue, network: &JsValue) -> JsResult {
     let mut config = deser_config!(config);
     let network = deser!(network, crate::core_deploy::CoreNetwork);
     config.add_network(network).map_err(format_errs)?;
@@ -80,7 +88,7 @@ pub fn add_network(config: &JsValue, network: &JsValue) -> JsResult<JsValue> {
 
 /// Add a bridge to a config
 #[wasm_bindgen(js_name = addBridge)]
-pub fn add_bridge(config: &JsValue, name: &str, bridge: &JsValue) -> JsResult<JsValue> {
+pub fn add_bridge(config: &JsValue, name: &str, bridge: &JsValue) -> JsResult {
     let mut config = deser_config!(config);
     let bridge = deser!(bridge, crate::contracts::BridgeContracts);
     config.add_bridge(name, bridge).map_err(format_errs)?;

@@ -1,5 +1,5 @@
 {
-  "environment": "production",
+  "environment": "test",
   "networks": ["ethereum", "moonbeam"],
   "rpcs": {
     "moonbeam": ["https://moonriver.api.onfinality.io/public"],

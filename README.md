@@ -3,6 +3,8 @@
 This is a crate for working with nomad configuration files. These config files
 contain information about the state of Nomad deployments.
 
+It also includes an auto-generated
+
 ### Building
 
 - `$ cargo build`
