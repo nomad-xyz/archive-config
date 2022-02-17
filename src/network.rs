@@ -5,7 +5,6 @@ use std::collections::{HashMap, HashSet};
 use crate::{
     agent::AgentConfig,
     common::{deser_nomad_number, NameOrDomain, NomadIdentifier, NomadLocator},
-    contracts::CoreContracts,
 };
 
 /// Governance details
@@ -22,9 +21,30 @@ pub struct Governance {
 }
 
 /// Core network information
+#[derive(Default, Debug, Clone, Copy, serde::Serialize, serde::Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct ProtocolConfiguration {
+    /// Block time on the network
+    #[serde(deserialize_with = "deser_nomad_number")]
+    block_time: u64,
+    /// Optimsitic seconds for replicas to wait
+    #[serde(deserialize_with = "deser_nomad_number")]
+    optimistic_seconds: u64,
+    /// Default process gas
+    #[serde(deserialize_with = "deser_nomad_number")]
+    process_gas: u64,
+    /// Reserve gas
+    #[serde(deserialize_with = "deser_nomad_number")]
+    reserve_gas: u64,
+    /// Maximum preflight gas
+    #[serde(deserialize_with = "deser_nomad_number")]
+    maximum_gas: u64,
+}
+
+/// Core network information
 #[derive(Default, Debug, Clone, serde::Serialize, serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct CoreNetwork {
+pub struct Domain {
     /// Network name
     pub name: String,
     /// Network domain identifier
@@ -32,8 +52,8 @@ pub struct CoreNetwork {
     pub domain: u64,
     /// List of connections to other networks
     pub connections: HashSet<String>,
-    /// Contract addresses
-    pub contracts: CoreContracts,
+    /// Nomad protocol configuration options
+    pub configuration: ProtocolConfiguration,
     /// Governance info
     pub governance: Governance,
     /// List of updaters for this network
@@ -44,24 +64,17 @@ pub struct CoreNetwork {
     pub agents: AgentConfig,
 }
 
-impl CoreNetwork {
-    /// Find the replica of a home on this network
-    pub fn replica_of(&self, home_network: &str) -> Option<NomadIdentifier> {
-        self.contracts.replica_of(home_network)
-    }
-}
-
 /// Core deployment info
 #[derive(Default, Debug, Clone, serde::Serialize, serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct CoreDeploy {
+pub struct NetworkInfo {
     /// The domain and ID of the governor
     pub governor: NomadLocator,
     /// The network information for each network
-    pub networks: HashMap<String, CoreNetwork>,
+    pub networks: HashMap<String, Domain>,
 }
 
-impl CoreDeploy {
+impl NetworkInfo {
     /// Resolve a `NameOrDomain` to a string, if that name/domain is present in this config
     pub fn resolve_domain(&self, domain: NameOrDomain) -> Option<String> {
         match domain {
@@ -75,14 +88,14 @@ impl CoreDeploy {
     }
 
     /// Get the network associated with the domain if any
-    pub fn get_network(&self, domain: NameOrDomain) -> Option<&CoreNetwork> {
+    pub fn get_network(&self, domain: NameOrDomain) -> Option<&Domain> {
         self.resolve_domain(domain)
             .and_then(|name| self.networks.get(&name))
     }
 
     /// Returns a deploy containing ONLY the networks directly connected to the
     /// specified network
-    pub fn trim_for_network(&self, network: &str) -> eyre::Result<CoreDeploy> {
+    pub fn trim_for_network(&self, network: &str) -> eyre::Result<NetworkInfo> {
         let core = self.networks.get(network).ok_or_else(|| {
             eyre::eyre!(
                 "Could not trim for network {}. Network not found in config.",

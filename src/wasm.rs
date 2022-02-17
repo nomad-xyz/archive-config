@@ -79,14 +79,23 @@ pub fn config_from_string(s: &str) -> JsResult {
 
 /// Add a network to the config
 #[wasm_bindgen(js_name = addNetwork)]
-pub fn add_network(config: &JsValue, network: &JsValue) -> JsResult {
+pub fn add_domain(config: &JsValue, network: &JsValue) -> JsResult {
     let mut config = deser_config!(config);
-    let network = deser!(network, crate::core_deploy::CoreNetwork);
-    config.add_network(network).map_err(format_errs)?;
+    let network = deser!(network, crate::network::Domain);
+    config.add_domain(network).map_err(format_errs)?;
     ret_config!(config)
 }
 
-/// Add a bridge to a config
+/// Add a network to the config
+#[wasm_bindgen(js_name = addCore)]
+pub fn add_core(config: &JsValue, name: &str, core: &JsValue) -> JsResult {
+    let mut config = deser_config!(config);
+    let core = deser!(core, crate::contracts::CoreContracts);
+    config.add_core(name, core).map_err(format_errs)?;
+    ret_config!(config)
+}
+
+/// Add a network to the config
 #[wasm_bindgen(js_name = addBridge)]
 pub fn add_bridge(config: &JsValue, name: &str, bridge: &JsValue) -> JsResult {
     let mut config = deser_config!(config);

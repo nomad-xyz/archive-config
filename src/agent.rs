@@ -112,7 +112,6 @@ pub struct AgentConfig {
     pub logging: LogConfig,
     /// Indexer configuration
     pub index: IndexConfig,
-
     /// Updater configuration
     pub updater: BaseAgentConfig,
     /// Relayer configuration

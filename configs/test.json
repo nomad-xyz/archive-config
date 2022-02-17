@@ -5,7 +5,7 @@
     "moonbeam": ["https://moonriver.api.onfinality.io/public"],
     "ethereum": ["https://main-light.eth.linkpool.io/"]
   },
-  "core": {
+  "protocol": {
     "governor": {
       "id": "0x93277b8f5939975b9e6694d5fd2837143afbf68a",
       "domain": 6648936
@@ -15,31 +15,12 @@
         "name": "ethereum",
         "domain": 6648936,
         "connections": ["moonbeam"],
-        "consensus": {
+        "configuration": {
           "blockTime": 15,
-          "optimisticSeconds": 1800
-        },
-        "contracts": {
-          "upgradeBeaconController": "0xdB378579c2Af11817EEA21474A39F95B5b9DfD7e",
-          "xAppConnectionManager": "0xFe8874778f946Ac2990A29eba3CFd50760593B2F",
-          "updaterManager": "0x9272C9d5fa902Ef3804EC81e0333Ae420D57f715",
-          "governanceRouter": {
-            "implementation": "0x569D80f7FC17316B4C83f072b92EF37B72819DE0",
-            "proxy": "0x3009C99D370B780304D2098196f1EBF779a4777a",
-            "beacon": "0x67833a48b3F509d4252ac2c19cd604556eD6c981"
-          },
-          "home": {
-            "implementation": "0x8F184D6Aa1977fd2F9d9024317D0ea5cF5815b6f",
-            "proxy": "0x92d3404a7E6c91455BbD81475Cd9fAd96ACFF4c8",
-            "beacon": "0x063e871f8DB991CEAd34B557A00B157B360084cc"
-          },
-          "replicas": {
-            "moonbeam": {
-              "implementation": "0x67833a48b3F509d4252ac2c19cd604556eD6c981",
-              "proxy": "0x7F58bb8311DB968AB110889F2Dfa04ab7E8E831B",
-              "beacon": "0x3009C99D370B780304D2098196f1EBF779a4777a"
-            }
-          }
+          "optimisticSeconds": 1800,
+          "processGas": 850000,
+          "reserveGas": 25000,
+          "maximumGas": 1000000
         },
         "governance": {
           "recoveryManager": "0xda2f881f7f4e9d2b9559f97c7670472a85c1986a",
@@ -61,32 +42,18 @@
           },
           "updater": {
             "enabled": true,
-            "signers": {
-              "transaction": {},
-              "attestation": ""
-            },
             "interval": 5
           },
           "relayer": {
             "enabled": true,
-            "signers": {
-              "transaction": {}
-            },
             "interval": 10
           },
           "processor": {
             "enabled": true,
-            "signers": {
-              "transaction": {}
-            },
             "interval": 5
           },
           "watcher": {
             "enabled": true,
-            "signers": {
-              "transaction": {},
-              "attestation": ""
-            },
             "interval": 10
           },
           "kathy": {
@@ -100,31 +67,12 @@
         "name": "moonbeam",
         "domain": 1650811245,
         "connections": ["ethereum"],
-        "consensus": {
+        "configuration": {
           "blockTime": 15,
-          "optimisticSeconds": 1800
-        },
-        "contracts": {
-          "upgradeBeaconController": "0xdCe06fFE78AaAc2894109A56BA83C3C33B073F44",
-          "xAppConnectionManager": "0xdB378579c2Af11817EEA21474A39F95B5b9DfD7e",
-          "updaterManager": "0x2e09EdD238EeaEA6e4da705fbe5922B1979e03aC",
-          "governanceRouter": {
-            "implementation": "0x7B39dA90C9eAF87e85C553964BC3CBd674e7CCc1",
-            "proxy": "0x569D80f7FC17316B4C83f072b92EF37B72819DE0",
-            "beacon": "0xA84e233A12b36125A731e1362121d8d4ea030c91"
-          },
-          "home": {
-            "implementation": "0x9272C9d5fa902Ef3804EC81e0333Ae420D57f715",
-            "proxy": "0x8F184D6Aa1977fd2F9d9024317D0ea5cF5815b6f",
-            "beacon": "0xFe8874778f946Ac2990A29eba3CFd50760593B2F"
-          },
-          "replicas": {
-            "ethereum": {
-              "implementation": "0x7F58bb8311DB968AB110889F2Dfa04ab7E8E831B",
-              "proxy": "0x049b51e531Fd8f90da6d92EA83dC4125002F20EF",
-              "beacon": "0x0876dFe4AcAe0e1c0a43302716483f5752298b71"
-            }
-          }
+          "optimisticSeconds": 1800,
+          "processGas": 850000,
+          "reserveGas": 25000,
+          "maximumGas": 1000000
         },
         "governance": {
           "governor": {
@@ -150,32 +98,18 @@
           },
           "updater": {
             "enabled": true,
-            "signers": {
-              "transaction": {},
-              "attestation": ""
-            },
             "interval": 5
           },
           "relayer": {
             "enabled": true,
-            "signers": {
-              "transaction": {}
-            },
             "interval": 10
           },
           "processor": {
             "enabled": true,
-            "signers": {
-              "transaction": {}
-            },
             "interval": 5
           },
           "watcher": {
             "enabled": true,
-            "signers": {
-              "transaction": {},
-              "attestation": ""
-            },
             "interval": 10
           },
           "kathy": {
@@ -183,6 +117,52 @@
             "signers": {},
             "interval": 100
           }
+        }
+      }
+    }
+  },
+  "core": {
+    "ethereum": {
+      "upgradeBeaconController": "0xdB378579c2Af11817EEA21474A39F95B5b9DfD7e",
+      "xAppConnectionManager": "0xFe8874778f946Ac2990A29eba3CFd50760593B2F",
+      "updaterManager": "0x9272C9d5fa902Ef3804EC81e0333Ae420D57f715",
+      "governanceRouter": {
+        "implementation": "0x569D80f7FC17316B4C83f072b92EF37B72819DE0",
+        "proxy": "0x3009C99D370B780304D2098196f1EBF779a4777a",
+        "beacon": "0x67833a48b3F509d4252ac2c19cd604556eD6c981"
+      },
+      "home": {
+        "implementation": "0x8F184D6Aa1977fd2F9d9024317D0ea5cF5815b6f",
+        "proxy": "0x92d3404a7E6c91455BbD81475Cd9fAd96ACFF4c8",
+        "beacon": "0x063e871f8DB991CEAd34B557A00B157B360084cc"
+      },
+      "replicas": {
+        "moonbeam": {
+          "implementation": "0x67833a48b3F509d4252ac2c19cd604556eD6c981",
+          "proxy": "0x7F58bb8311DB968AB110889F2Dfa04ab7E8E831B",
+          "beacon": "0x3009C99D370B780304D2098196f1EBF779a4777a"
+        }
+      }
+    },
+    "moonbeam": {
+      "upgradeBeaconController": "0xdCe06fFE78AaAc2894109A56BA83C3C33B073F44",
+      "xAppConnectionManager": "0xdB378579c2Af11817EEA21474A39F95B5b9DfD7e",
+      "updaterManager": "0x2e09EdD238EeaEA6e4da705fbe5922B1979e03aC",
+      "governanceRouter": {
+        "implementation": "0x7B39dA90C9eAF87e85C553964BC3CBd674e7CCc1",
+        "proxy": "0x569D80f7FC17316B4C83f072b92EF37B72819DE0",
+        "beacon": "0xA84e233A12b36125A731e1362121d8d4ea030c91"
+      },
+      "home": {
+        "implementation": "0x9272C9d5fa902Ef3804EC81e0333Ae420D57f715",
+        "proxy": "0x8F184D6Aa1977fd2F9d9024317D0ea5cF5815b6f",
+        "beacon": "0xFe8874778f946Ac2990A29eba3CFd50760593B2F"
+      },
+      "replicas": {
+        "ethereum": {
+          "implementation": "0x7F58bb8311DB968AB110889F2Dfa04ab7E8E831B",
+          "proxy": "0x049b51e531Fd8f90da6d92EA83dC4125002F20EF",
+          "beacon": "0x0876dFe4AcAe0e1c0a43302716483f5752298b71"
         }
       }
     }
