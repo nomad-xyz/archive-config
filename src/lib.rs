@@ -37,9 +37,9 @@ pub struct NomadConfig {
     /// Pre-configured RPCs for any known networks
     pub rpcs: HashMap<String, HashSet<String>>,
     /// Protocol information (e.g. deploy-time)
-    pub protocol: NetworkInfo,
+    protocol: NetworkInfo,
     /// Core deploy information
-    pub core: HashMap<String, CoreContracts>,
+    core: HashMap<String, CoreContracts>,
     /// Bridge contracts for each network
     bridge: HashMap<String, BridgeContracts>,
 }
@@ -253,6 +253,21 @@ impl NomadConfig {
         self.core
             .get(&target_network)
             .and_then(|contracts| contracts.replica_of(&home_network))
+    }
+
+    /// Get a reference to the nomad config's protocol configuration.
+    pub fn protocol(&self) -> &NetworkInfo {
+        &self.protocol
+    }
+
+    /// Get a reference to the nomad config's core map.
+    pub fn core(&self) -> &HashMap<String, CoreContracts> {
+        &self.core
+    }
+
+    /// Get a reference to the nomad config's bridge map.
+    pub fn bridge(&self) -> &HashMap<String, BridgeContracts> {
+        &self.bridge
     }
 }
 
