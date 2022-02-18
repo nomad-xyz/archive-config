@@ -1,0 +1,240 @@
+{
+  "environment": "dev",
+  "networks": ["milkomedatestnet", "moonbasealpha", "rinkeby", "kovan"],
+  "rpcs": {
+    "milkomedatestnet": [],
+    "moonbasealpha": [],
+    "rinkeby": [],
+    "kovan": []
+  },
+  "core": {
+    "governor": {
+      "id": "",
+      "domain": ""
+    },
+    "networks": {
+      "milkomedatestnet": {
+        "name": "milkomedatestnet",
+        "domain": 8000,
+        "connections": ["rinkeby"],
+        "protocol": {
+          "blockTime": 4,
+          "optimisticSeconds": 10,
+          "processGas": 850000,
+          "reserveGas": 15000,
+          "maximumGas": 1000000
+        },
+        "contracts": {
+          "upgradeBeaconController": "0x7A9CA7500C8D6f66FACD373f64F65fC8E9e11742",
+          "xAppConnectionManager": "0xf116142af150F8E2b939C14f746a67Ed6788266C",
+          "updaterManager": "0xd685f14522Ea053A6aC7CcDEB2c1CD1E54714dA6",
+          "governance": {
+            "implementation": "0x9eb1A4075c8484eb3dCF67DA7EE87b2093218CFe",
+            "proxy": "0x66daa391eF8679b08246Ab9a5F56EBc5Eb6489c8",
+            "beacon": "0x75f5a07e565915442BCC7F98962714Fec4CcF05D"
+          },
+          "home": {
+            "implementation": "0x0507f12B31276Ed8EDDFD6F463477aD64AD9dA45",
+            "proxy": "0x8e68819f8596B7D23CBfe1D8A0605675c1eD646f",
+            "beacon": "0x215F582A1352367576ed9b5cB243B32bd9D82d02"
+          },
+          "replicas": {
+            "2000": {
+              "implementation": "0x6A5F9531D1877ebE96Bc0631DbF64BBCf1f7421c",
+              "proxy": "0x53E7F6AFbECBB18a8E4989b89ADB1f0ce85272F5",
+              "beacon": "0x2b64caC924047E240a894E93A38f7Ddfa82296A2"
+            }
+          },
+          "recoveryManager": "0xa4849f1D96B26066f9C631FCdc8F1457D27Fb5EC",
+          "updater": "0x4177372FD9581ceb2367e0Ce84adC5DAD9DF8D55"
+        },
+        "governance": {
+          "recoveryManager": "0xa4849f1D96B26066f9C631FCdc8F1457D27Fb5EC",
+          "recoveryTimelock": 180
+        },
+        "agents": {
+          "rpcStyle": "ethereum",
+          "timelag": 5,
+          "db": "db_path",
+          "logging": {
+            "level": "debug",
+            "fmt": "json"
+          },
+          "index": {
+            "from": "1771254",
+            "chunk": "2000"
+          },
+          "updater": { "enabled": true, "interval": 5 },
+          "relayer": { "enabled": true, "interval": 5 },
+          "processor": { "enabled": true, "interval": 5 },
+          "watcher": { "enabled": true, "interval": 5 },
+          "kathy": { "enabled": true, "interval": 100 }
+        }
+      },
+      "moonbasealpha": {
+        "name": "moonbasealpha",
+        "domain": 5000,
+        "connections": ["rinkeby"],
+        "protocol": {
+          "blocktime": 0,
+          "optimisticSeconds": 0,
+          "processGas": 850000,
+          "reserveGas": 15000,
+          "maximumGas": 1000000
+        },
+        "contracts": {},
+        "governance": {},
+        "agents": {
+          "rpcStyle": "ethereum",
+          "timelag": 0,
+          "db": "db_path",
+          "logging": {
+            "level": "debug",
+            "fmt": "json"
+          },
+          "index": {
+            "from": "1555095",
+            "chunk": "2000"
+          },
+          "updater": { "enabled": true, "interval": 5 },
+          "relayer": { "enabled": true, "interval": 5 },
+          "processor": { "enabled": true, "interval": 5 },
+          "watcher": { "enabled": true, "interval": 5 },
+          "kathy": { "enabled": true, "interval": 100 }
+        }
+      },
+      "rinkeby": {
+        "name": "rinkeby",
+        "domain": 0,
+        "connections": [],
+        "protocol": {
+          "blocktime": 0,
+          "optimisticSeconds": 0,
+          "processGas": 850000,
+          "reserveGas": 15000,
+          "maximumGas": 1000000
+        },
+        "contracts": {},
+        "governance": {},
+        "agents": {
+          "rpcStyle": "ethereum",
+          "timelag": 100,
+          "db": "db_path",
+          "logging": {
+            "level": "debug",
+            "fmt": "json"
+          },
+          "index": {},
+          "updater": { "enabled": true, "interval": 5 },
+          "relayer": { "enabled": true, "interval": 5 },
+          "processor": { "enabled": true, "interval": 5 },
+          "watcher": { "enabled": true, "interval": 5 },
+          "kathy": { "enabled": true, "interval": 100 }
+        }
+      },
+      "kovan": {
+        "name": "kovan",
+        "domain": 0,
+        "connections": [],
+        "protocol": {
+          "blocktime": 0,
+          "optimisticSeconds": 0,
+          "processGas": 850000,
+          "reserveGas": 15000,
+          "maximumGas": 1000000
+        },
+        "contracts": {},
+        "governance": {},
+        "agents": {
+          "rpcStyle": "ethereum",
+          "timelag": 0,
+          "db": "db_path",
+          "logging": {
+            "level": "debug",
+            "fmt": "json"
+          },
+          "index": {},
+          "updater": { "enabled": true, "interval": 5 },
+          "relayer": { "enabled": true, "interval": 5 },
+          "processor": { "enabled": true, "interval": 5 },
+          "watcher": { "enabled": true, "interval": 5 },
+          "kathy": { "enabled": true, "interval": 100 }
+        }
+      }
+    }
+  },
+  "bridge": {
+    "milkomedatestnet": {
+      "bridgeRouter": {
+        "implementation": "0xd7A0Ef9172f313CE07a6A5753B39E28dcDa470DE",
+        "proxy": "0x4C2e47cA4Dd7b93A62730e463BE43A0EA01c5A10",
+        "beacon": "0xcccc2467663626B99AE440c4F42473fC95AD3367"
+      },
+      "tokenRegistry": {
+        "implementation": "0xb45424Ac6f5F2f23433d078827F5d8b4e3996211",
+        "proxy": "0xC2205CA7803B21748AC2854994Cfe10E5440CDEf",
+        "beacon": "0x9298eaF94667281000e7367Fb283049b5e26FD87"
+      },
+      "bridgeToken": {
+        "implementation": "0x67038c87496595086B5286A24fb9abb60e0e83BF",
+        "proxy": "0x6560683E75d8bA788C53f9Bc1d570b5b43120CDC",
+        "beacon": "0xfEE05681677D1C4151B289E138c30F2d1A30dBd6"
+      },
+      "ethHelper": "0x3Ec2235bFdBcA03C3709c97D23f9d72c75F8A7Dd"
+    },
+    "moonbasealpha": {
+      "bridgeRouter": {
+        "implementation": "0x87CCF662058697873F6801e40223a6f405587ab5",
+        "proxy": "0x07235F5AE672B80649D79ebceBe749Ba4E520754",
+        "beacon": "0xf1B83D100860887aEf35e50b3794E28dC744E5Ce"
+      },
+      "tokenRegistry": {
+        "implementation": "0xed03a3E1d4f93426F1452ed431B4652B81530e11",
+        "proxy": "0x9F671D2A7e48b97Ad7E080fbf495d060c536De94",
+        "beacon": "0xAA141aeE401aA2EE26D6F8BEC2618646C637250f"
+      },
+      "bridgeToken": {
+        "implementation": "0xC2E60527846361983C6ccf37d6e44d1b08037755",
+        "proxy": "0x5d0dA0399e8A2585FA14B25050A735fb19A45b09",
+        "beacon": "0x44FDda0aaB4153BA759599A4746389ccB546Bd8d"
+      },
+      "ethHelper": "0x71a0CAfbc6bd7F16188B141850d9Bdce47981B1c"
+    },
+    "rinkeby": {
+      "bridgeRouter": {
+        "implementation": "0x0754Db4C98F4B28c48228103d9770f1940079934",
+        "proxy": "0xeACafFb9fBCe3d4c4C5D07AF5DFa51CcF5a348b7",
+        "beacon": "0x7274963E5A70f9d6d441847Ee000105dd710cAb5"
+      },
+      "tokenRegistry": {
+        "implementation": "0x3ac3C18A00bA186314dc8f0Ca89D869A4262fFFB",
+        "proxy": "0x885A8bd4be130422AEB1Eb9Eeb9513a5D2102cad",
+        "beacon": "0x4d911A52837703708CB2bc733CcBD87726dEA3Cc"
+      },
+      "bridgeToken": {
+        "implementation": "0x0C4501f2088c4963286CE5E9a5080a31F17b1a87",
+        "proxy": "0xa6391c179beF326c42E0f1eaEb3764412d9CdccB",
+        "beacon": "0xeC13CC62F5823143f4bB74DA0C74931e3eB344AD"
+      },
+      "ethHelper": "0x074cd4d8629445Fda3b17574FCB848eda767058b"
+    },
+    "kovan": {
+      "bridgeRouter": {
+        "implementation": "0x01652e694BbD82C0900776c0406C3DFaa00e1e91",
+        "proxy": "0xa50E2db92c48f1c20C42338e6091E6B73da376a4",
+        "beacon": "0x5D1F5F8eF74Fb8626FE2d482618F8517a3cBD8F7"
+      },
+      "tokenRegistry": {
+        "implementation": "0x3e8391dEB0f2ad863d8b61dfbcadE009BD5243A1",
+        "proxy": "0x7fe65Cd0b589B39E7744DE73ad225085F0FE7f39",
+        "beacon": "0xB4D1355eB66122a768BCE006b0Ef7219aC1dae35"
+      },
+      "bridgeToken": {
+        "implementation": "0xc56D98fE297D0Fa6699e760c6760A4A8Ffbe32Cf",
+        "proxy": "0x0fC39710d455416243AB27a13EE7ea709d5685f3",
+        "beacon": "0xb3808FE90989C90Fb986A3EC10f91D5901bb7801"
+      },
+      "ethHelper": "0xEFf85cD6763fEc984470bB1F433777d73aF1298B"
+    }
+  }
+}
