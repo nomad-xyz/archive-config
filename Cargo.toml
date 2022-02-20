@@ -12,6 +12,9 @@ crate-type = ["cdylib", "rlib"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[build-dependencies]
+eyre = "0.6.6"
+
 [dependencies]
 affix = "0.1.2"
 ethers = { git = "https://github.com/gakonst/ethers-rs", branch = "master" }
