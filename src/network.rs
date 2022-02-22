@@ -2,10 +2,7 @@
 
 use std::collections::{HashMap, HashSet};
 
-use crate::{
-    agent::AgentConfig,
-    common::{deser_nomad_number, NameOrDomain, NomadIdentifier, NomadLocator},
-};
+use crate::common::{deser_nomad_number, NameOrDomain, NomadIdentifier, NomadLocator};
 
 /// Governance details
 #[derive(
@@ -60,8 +57,6 @@ pub struct Domain {
     pub updaters: HashSet<NomadIdentifier>,
     /// List of watchers for this network
     pub watchers: HashSet<NomadIdentifier>,
-    /// Agent configuration for this network
-    pub agents: AgentConfig,
 }
 
 /// Core deployment info

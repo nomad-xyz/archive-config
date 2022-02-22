@@ -1,11 +1,9 @@
-use eyre;
 use std::io::Write;
 
-const DEFINITIONS: &'static str =
-    include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/data/definitions.ts"));
-const TYPEDEFS: &'static str = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/data/types.rs"));
+const DEFINITIONS: &str = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/data/definitions.ts"));
+const TYPEDEFS: &str = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/data/types.rs"));
 
-const OUTPUT_FILE: &'static str = concat!(env!("CARGO_MANIFEST_DIR"), "/src/wasm/types.rs");
+const OUTPUT_FILE: &str = concat!(env!("CARGO_MANIFEST_DIR"), "/src/wasm/types.rs");
 
 fn main() -> eyre::Result<()> {
     println!(
@@ -32,7 +30,7 @@ const _: &'static str = r"#"###
     )?;
     f.write_all(DEFINITIONS.as_ref())?;
     writeln!(f, r###"#";"###)?;
-    writeln!(f, "")?;
+    writeln!(f)?;
     f.write_all(TYPEDEFS.as_ref())?;
     Ok(())
 }

@@ -27,41 +27,7 @@
           "recoveryTimelock": 86400
         },
         "updaters": ["0x71dC76C07E92325e7Cc09117AB94310Da63Fc2b9"],
-        "watchers": ["0x9782A3C8128f5D1BD3C9655d03181ba5b420883E"],
-        "agents": {
-          "rpcStyle": "ethereum",
-          "timelag": 20,
-          "db": "/path/to/db",
-          "logging": {
-            "level": "debug",
-            "fmt": "json"
-          },
-          "index": {
-            "from": "13983724",
-            "chunk": "2000"
-          },
-          "updater": {
-            "enabled": true,
-            "interval": 5
-          },
-          "relayer": {
-            "enabled": true,
-            "interval": 10
-          },
-          "processor": {
-            "enabled": true,
-            "interval": 5
-          },
-          "watcher": {
-            "enabled": true,
-            "interval": 10
-          },
-          "kathy": {
-            "enabled": false,
-            "signers": {},
-            "interval": 100
-          }
-        }
+        "watchers": ["0x9782A3C8128f5D1BD3C9655d03181ba5b420883E"]
       },
       "moonbeam": {
         "name": "moonbeam",
@@ -83,41 +49,7 @@
           "recoveryTimelock": 86400
         },
         "updaters": ["0x40FD91557B318BD5d52D12535795265c88702681"],
-        "watchers": ["0x297BBC2F2EAAEB17Ee53F514020bC8173F0570dC"],
-        "agents": {
-          "rpcStyle": "ethereum",
-          "timelag": 20,
-          "db": "/path/to/db",
-          "logging": {
-            "level": "debug",
-            "fmt": "json"
-          },
-          "index": {
-            "from": 171256,
-            "chunk": 2000
-          },
-          "updater": {
-            "enabled": true,
-            "interval": 5
-          },
-          "relayer": {
-            "enabled": true,
-            "interval": 10
-          },
-          "processor": {
-            "enabled": true,
-            "interval": 5
-          },
-          "watcher": {
-            "enabled": true,
-            "interval": 10
-          },
-          "kathy": {
-            "enabled": false,
-            "signers": {},
-            "interval": 100
-          }
-        }
+        "watchers": ["0x297BBC2F2EAAEB17Ee53F514020bC8173F0570dC"]
       }
     }
   },
@@ -203,6 +135,76 @@
         "beacon": "0x969d515486Ba6133400aC9C73298586426a090F5"
       },
       "ethHelper": "0xB70588b1A51F847d13158ff18E9Cac861dF5Fb00"
+    }
+  },
+  "agent": {
+    "ethereum": {
+      "rpcStyle": "ethereum",
+      "timelag": 20,
+      "db": "/path/to/db",
+      "logging": {
+        "level": "debug",
+        "fmt": "json"
+      },
+      "index": {
+        "from": "13983724",
+        "chunk": "2000"
+      },
+      "updater": {
+        "enabled": true,
+        "interval": 5
+      },
+      "relayer": {
+        "enabled": true,
+        "interval": 10
+      },
+      "processor": {
+        "enabled": true,
+        "interval": 5
+      },
+      "watcher": {
+        "enabled": true,
+        "interval": 10
+      },
+      "kathy": {
+        "enabled": false,
+        "signers": {},
+        "interval": 100
+      }
+    },
+    "moonbeam": {
+      "rpcStyle": "ethereum",
+      "timelag": 20,
+      "db": "/path/to/db",
+      "logging": {
+        "level": "debug",
+        "fmt": "json"
+      },
+      "index": {
+        "from": 171256,
+        "chunk": 2000
+      },
+      "updater": {
+        "enabled": true,
+        "interval": 5
+      },
+      "relayer": {
+        "enabled": true,
+        "interval": 10
+      },
+      "processor": {
+        "enabled": true,
+        "interval": 5
+      },
+      "watcher": {
+        "enabled": true,
+        "interval": 10
+      },
+      "kathy": {
+        "enabled": false,
+        "signers": {},
+        "interval": 100
+      }
     }
   }
 }

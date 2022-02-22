@@ -12,6 +12,7 @@ pub mod contracts;
 pub mod network;
 
 pub mod builtin;
+use agent::AgentConfig;
 pub use builtin::*;
 
 #[cfg(target_arch = "wasm32")]
@@ -42,6 +43,8 @@ pub struct NomadConfig {
     core: HashMap<String, CoreContracts>,
     /// Bridge contracts for each network
     bridge: HashMap<String, BridgeContracts>,
+    /// Agent configuration
+    agent: HashMap<String, AgentConfig>,
 }
 
 impl NomadConfig {
