@@ -27,10 +27,10 @@ fn main() -> eyre::Result<()> {
         f,
         r###"
 #[wasm_bindgen(typescript_custom_section)]
-const _: &'static str = r"#"###
+const _: &'static str = r#""###
     )?;
     f.write_all(DEFINITIONS.as_ref())?;
-    writeln!(f, r###"#";"###)?;
+    writeln!(f, r###""#;"###)?;
     writeln!(f)?;
     f.write_all(TYPEDEFS.as_ref())?;
 

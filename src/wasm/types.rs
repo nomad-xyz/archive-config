@@ -2,7 +2,7 @@
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen(typescript_custom_section)]
-const _: &'static str = r"#
+const _: &'static str = r#"
 export type NomadIdentifier = string;
 export type NameOrDomain = number | string;
 
@@ -102,7 +102,7 @@ export interface NomadConfig {
   core: Record<string, CoreContracts>;
   bridge: Record<string, BridgeContracts>;
 }
-#";
+"#;
 
 #[wasm_bindgen]
 extern "C" {
