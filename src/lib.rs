@@ -272,6 +272,11 @@ impl NomadConfig {
     pub fn bridge(&self) -> &HashMap<String, BridgeContracts> {
         &self.bridge
     }
+
+    /// Get a reference to the nomad config's agent.
+    pub fn agent(&self) -> &HashMap<String, AgentConfig> {
+        &self.agent
+    }
 }
 
 #[cfg(test)]

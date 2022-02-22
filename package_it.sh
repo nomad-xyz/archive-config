@@ -12,6 +12,12 @@ if ! [ -x "$(command -v jq)" ]; then
     exit 1
 fi
 
+
+# Check if jq is installed
+if ! [ -x "$(command -v wasm-pack)" ]; then
+    echo "wasm-pack is not installed" >& 2
+    exit 1
+fi
 # Cleanup any old generated code
 rm -rf ./ts
 mkdir -p ./ts
@@ -22,9 +28,13 @@ wasm-pack build  --target nodejs --scope $SCOPE --out-dir ts/node
 
 # use the browser package.json as a base
 mv ts/web/package.json ts/
-cp ts/web/LICENSE* ts/
+mv ts/web/LICENSE* ts/
+
+# Get the README in the root, delete the spare
+mv ts/web/README* ts/
 
 # clean redundant files
+rm ts/node/README*
 rm ts/node/LICENSE*
 rm ts/node/package.json
 
