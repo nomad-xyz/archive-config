@@ -7,7 +7,7 @@ use once_cell::sync::OnceCell;
 use crate::NomadConfig;
 
 // built-in config objects
-static TEST_JSON: &str = include_str!("../configs/test.json");
+static TEST_JSON: &str = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/configs/test.json"));
 static BUILTINS: OnceCell<HashMap<&'static str, NomadConfig>> = OnceCell::new();
 
 /// Get a built-in config object
