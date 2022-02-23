@@ -103,9 +103,6 @@ pub struct BaseAgentConfig {
 pub struct AgentConfig {
     /// RPC specifier
     pub rpc_style: RpcStyles,
-    /// Timelag for agents using the timelag provider
-    #[serde(deserialize_with = "deser_nomad_number")]
-    pub timelag: u64,
     /// Path to the DB
     pub db: PathBuf,
     /// Logging configuration

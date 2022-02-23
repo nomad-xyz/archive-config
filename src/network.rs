@@ -36,6 +36,9 @@ pub struct ProtocolConfiguration {
     /// Maximum preflight gas
     #[serde(deserialize_with = "deser_nomad_number")]
     maximum_gas: u64,
+    /// Timelag for agents using the timelag provider
+    #[serde(deserialize_with = "deser_nomad_number")]
+    pub finalization_blocks: u64,
 }
 
 /// Core network information
