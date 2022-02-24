@@ -2,6 +2,10 @@
 
 ### Unreleased
 
+### v0.1.0-beta.6
+
+- correct typo in Domain
+
 ### v0.1.0-beta.5
 
 - breakup network specs and contract configuration

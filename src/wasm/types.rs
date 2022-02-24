@@ -90,7 +90,7 @@ export interface Domain {
   name: string;
   domain: number;
   connections: Array<string>;
-  configurationi: ContractConfig;
+  configuration: ContractConfig;
   specs: NetworkSpecs;
 }
 
