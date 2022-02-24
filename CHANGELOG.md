@@ -2,6 +2,10 @@
 
 ### Unreleased
 
+### v0.1.0-beta.5
+
+- breakup network specs and contract configuration
+
 ### v0.1.0-beta.3
 
 - rename `timelag` to `finalizationBlocks` and move to protocol section

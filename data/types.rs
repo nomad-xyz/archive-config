@@ -33,8 +33,11 @@ extern "C" {
     #[wasm_bindgen(typescript_type = "Governance")]
     pub type Governance;
 
-    #[wasm_bindgen(typescript_type = "ProtocolConfiguration")]
-    pub type ProtocolConfiguration;
+    #[wasm_bindgen(typescript_type = "ContractConfig")]
+    pub type ContractConfig;
+
+    #[wasm_bindgen(typescript_type = "NetworkSpecs")]
+    pub type NetworkSpecs;
 
     #[wasm_bindgen(typescript_type = "Domain")]
     pub type Domain;

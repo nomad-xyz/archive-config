@@ -16,43 +16,48 @@
         "name": "ethereum",
         "domain": 6648936,
         "connections": ["moonbeam"],
-        "configuration": {
+        "specs": {
           "blockTime": 15,
           "finalizationBlocks": 20,
+          "supports1559": true
+        },
+        "configuration": {
           "optimisticSeconds": 1800,
           "processGas": 850000,
           "reserveGas": 25000,
-          "maximumGas": 1000000
-        },
-        "governance": {
-          "recoveryManager": "0xda2f881f7f4e9d2b9559f97c7670472a85c1986a",
-          "recoveryTimelock": 86400
-        },
-        "updaters": ["0x71dC76C07E92325e7Cc09117AB94310Da63Fc2b9"],
-        "watchers": ["0x9782A3C8128f5D1BD3C9655d03181ba5b420883E"]
+          "maximumGas": 1000000,
+          "governance": {
+            "recoveryManager": "0xda2f881f7f4e9d2b9559f97c7670472a85c1986a",
+            "recoveryTimelock": 86400
+          },
+          "updaters": ["0x71dC76C07E92325e7Cc09117AB94310Da63Fc2b9"],
+          "watchers": ["0x9782A3C8128f5D1BD3C9655d03181ba5b420883E"]
+        }
       },
       "moonbeam": {
         "name": "moonbeam",
         "domain": 1650811245,
         "connections": ["ethereum"],
-        "configuration": {
+        "specs": {
           "finalizationBlocks": 20,
-          "blockTime": 15,
+          "blockTime": 15
+        },
+        "configuration": {
           "optimisticSeconds": 1800,
           "processGas": 850000,
           "reserveGas": 25000,
-          "maximumGas": 1000000
-        },
-        "governance": {
-          "governor": {
-            "address": "0x93277b8f5939975b9e6694d5fd2837143afbf68a",
-            "domain": 6648936
+          "maximumGas": 1000000,
+          "governance": {
+            "governor": {
+              "address": "0x93277b8f5939975b9e6694d5fd2837143afbf68a",
+              "domain": 6648936
+            },
+            "recoveryManager": "0xea24Ac04DEFb338CA8595C3750E20166F3b4998A",
+            "recoveryTimelock": 86400
           },
-          "recoveryManager": "0xea24Ac04DEFb338CA8595C3750E20166F3b4998A",
-          "recoveryTimelock": 86400
-        },
-        "updaters": ["0x40FD91557B318BD5d52D12535795265c88702681"],
-        "watchers": ["0x297BBC2F2EAAEB17Ee53F514020bC8173F0570dC"]
+          "updaters": ["0x40FD91557B318BD5d52D12535795265c88702681"],
+          "watchers": ["0x297BBC2F2EAAEB17Ee53F514020bC8173F0570dC"]
+        }
       }
     }
   },

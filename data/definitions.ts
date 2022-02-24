@@ -65,23 +65,28 @@ export interface Governance {
   recoveryTimelock: number | string;
 }
 
-export interface ProtocolConfiguration {
-  blockTime: number | string;
+export interface ContractConfig {
   optimisticSeconds: number | string;
   processGas: number | string;
   reserveGas: number | string;
   maximumGas: number | string;
+  governance: Governance;
+  updaters: Array<NomadIdentifier>;
+  watchers: Array<NomadIdentifier>;
+}
+
+export interface NetworkSpecs {
+  finalizationBlocks: number | string;
+  blockTime: number | string;
+  supports1559: boolean;
 }
 
 export interface Domain {
   name: string;
   domain: number;
   connections: Array<string>;
-  configurationi: ProtocolConfiguration;
-  governance: Governance;
-  updaters: Array<NomadIdentifier>;
-  watchers: Array<NomadIdentifier>;
-  agents: AgentConfig;
+  configurationi: ContractConfig;
+  specs: NetworkSpecs;
 }
 
 export interface NetworkInfo {
@@ -96,4 +101,5 @@ export interface NomadConfig {
   protocol: NetworkInfo;
   core: Record<string, CoreContracts>;
   bridge: Record<string, BridgeContracts>;
+  agent: Record<string, AgentConfig>;
 }

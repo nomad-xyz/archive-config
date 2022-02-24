@@ -17,28 +17,42 @@ pub struct Governance {
     pub recovery_timelock: u64,
 }
 
+/// Nomad Contract deploy-time config
+#[derive(Default, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct ContractConfig {
+    /// Optimsitic seconds for replicas to wait
+    #[serde(deserialize_with = "deser_nomad_number")]
+    pub optimistic_seconds: u64,
+    /// Default process gas
+    #[serde(deserialize_with = "deser_nomad_number")]
+    pub process_gas: u64,
+    /// Reserve gas
+    #[serde(deserialize_with = "deser_nomad_number")]
+    pub reserve_gas: u64,
+    /// Maximum preflight gas
+    #[serde(deserialize_with = "deser_nomad_number")]
+    pub maximum_gas: u64,
+    /// List of updaters for this network
+    pub updaters: HashSet<NomadIdentifier>,
+    /// List of watchers for this network
+    pub watchers: HashSet<NomadIdentifier>,
+    /// Governance info
+    pub governance: Governance,
+}
 /// Core network information
 #[derive(Default, Debug, Clone, Copy, serde::Serialize, serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct ProtocolConfiguration {
+pub struct NetworkSpecs {
     /// Block time on the network
     #[serde(deserialize_with = "deser_nomad_number")]
-    block_time: u64,
-    /// Optimsitic seconds for replicas to wait
-    #[serde(deserialize_with = "deser_nomad_number")]
-    optimistic_seconds: u64,
-    /// Default process gas
-    #[serde(deserialize_with = "deser_nomad_number")]
-    process_gas: u64,
-    /// Reserve gas
-    #[serde(deserialize_with = "deser_nomad_number")]
-    reserve_gas: u64,
-    /// Maximum preflight gas
-    #[serde(deserialize_with = "deser_nomad_number")]
-    maximum_gas: u64,
+    pub block_time: u64,
     /// Timelag for agents using the timelag provider
     #[serde(deserialize_with = "deser_nomad_number")]
     pub finalization_blocks: u64,
+    /// True if the networks supports 1559. Otherwise false
+    #[serde(default)]
+    pub supports_1559: bool,
 }
 
 /// Core network information
@@ -53,13 +67,9 @@ pub struct Domain {
     /// List of connections to other networks
     pub connections: HashSet<String>,
     /// Nomad protocol configuration options
-    pub configuration: ProtocolConfiguration,
-    /// Governance info
-    pub governance: Governance,
-    /// List of updaters for this network
-    pub updaters: HashSet<NomadIdentifier>,
-    /// List of watchers for this network
-    pub watchers: HashSet<NomadIdentifier>,
+    pub configuration: ContractConfig,
+    /// Network specifications
+    pub specs: NetworkSpecs,
 }
 
 /// Core deployment info
