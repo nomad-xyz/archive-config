@@ -12,7 +12,6 @@ pub mod contracts;
 pub mod network;
 
 pub mod builtin;
-use agent::AgentConfig;
 pub use builtin::*;
 
 #[cfg(target_arch = "wasm32")]
@@ -23,6 +22,7 @@ pub mod wasm;
 #[cfg_attr(target_arch = "wasm32", global_allocator)]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
+use agent::AgentConfig;
 use common::{NameOrDomain, NomadIdentifier};
 use contracts::{BridgeContracts, CoreContracts};
 use network::{Domain, NetworkInfo};
@@ -31,6 +31,8 @@ use network::{Domain, NetworkInfo};
 #[derive(Default, Debug, Clone, serde::Serialize, serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct NomadConfig {
+    /// Config version
+    pub version: u64,
     /// A name for the enviroment (dev/staging/prod/local)
     pub environment: String,
     /// The set of networks used in this config
@@ -277,6 +279,11 @@ impl NomadConfig {
     pub fn agent(&self) -> &HashMap<String, AgentConfig> {
         &self.agent
     }
+
+    /// Convert to yaml
+    pub fn to_yaml(&self) -> eyre::Result<String> {
+        Ok(serde_yaml::to_string(&self)?)
+    }
 }
 
 #[cfg(test)]
@@ -300,5 +307,14 @@ mod tests {
     #[test]
     fn it_allows_default_config() {
         dbg!(NomadConfig::default());
+    }
+
+    #[test]
+    fn it_does_the_yaml() {
+        let yaml = crate::builtin::get_builtin("test")
+            .unwrap()
+            .to_yaml()
+            .unwrap();
+        println!("{}", yaml);
     }
 }

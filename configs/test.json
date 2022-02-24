@@ -1,4 +1,5 @@
 {
+  "version": 0,
   "environment": "test",
   "networks": ["ethereum", "moonbeam"],
   "rpcs": {
