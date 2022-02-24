@@ -2,7 +2,10 @@
 
 ### Unreleased
 
+### v0.1.0-beta.7
+
 - add chain id to protocol specification block
+- single updater. not multiple
 
 ### v0.1.0-beta.6
 

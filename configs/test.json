@@ -31,7 +31,7 @@
             "recoveryManager": "0xda2f881f7f4e9d2b9559f97c7670472a85c1986a",
             "recoveryTimelock": 86400
           },
-          "updaters": ["0x71dC76C07E92325e7Cc09117AB94310Da63Fc2b9"],
+          "updater": "0x71dC76C07E92325e7Cc09117AB94310Da63Fc2b9",
           "watchers": ["0x9782A3C8128f5D1BD3C9655d03181ba5b420883E"]
         }
       },
@@ -58,7 +58,7 @@
             "recoveryManager": "0xea24Ac04DEFb338CA8595C3750E20166F3b4998A",
             "recoveryTimelock": 86400
           },
-          "updaters": ["0x40FD91557B318BD5d52D12535795265c88702681"],
+          "updater": "0x40FD91557B318BD5d52D12535795265c88702681",
           "watchers": ["0x297BBC2F2EAAEB17Ee53F514020bC8173F0570dC"]
         }
       }

@@ -34,7 +34,7 @@ pub struct ContractConfig {
     #[serde(deserialize_with = "deser_nomad_number")]
     pub maximum_gas: u64,
     /// List of updaters for this network
-    pub updaters: HashSet<NomadIdentifier>,
+    pub updater: NomadIdentifier,
     /// List of watchers for this network
     pub watchers: HashSet<NomadIdentifier>,
     /// Governance info
