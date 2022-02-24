@@ -2,6 +2,10 @@
 
 ### Unreleased
 
+### v0.1.0-beta.8
+
+- fix incorrect TS definition
+
 ### v0.1.0-beta.7
 
 - add chain id to protocol specification block

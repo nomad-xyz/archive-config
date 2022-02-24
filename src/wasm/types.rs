@@ -76,7 +76,7 @@ export interface ContractConfig {
   reserveGas: number | string;
   maximumGas: number | string;
   governance: Governance;
-  updaters: Array<NomadIdentifier>;
+  updater: NomadIdentifier;
   watchers: Array<NomadIdentifier>;
 }
 
