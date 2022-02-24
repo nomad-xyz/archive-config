@@ -17,6 +17,7 @@
         "domain": 6648936,
         "connections": ["moonbeam"],
         "specs": {
+          "chainId": 1,
           "blockTime": 15,
           "finalizationBlocks": 20,
           "supports1559": true
@@ -39,8 +40,10 @@
         "domain": 1650811245,
         "connections": ["ethereum"],
         "specs": {
+          "chainId": 1284,
           "finalizationBlocks": 20,
-          "blockTime": 15
+          "blockTime": 15,
+          "supports1559": true
         },
         "configuration": {
           "optimisticSeconds": 1800,

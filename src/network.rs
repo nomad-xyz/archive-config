@@ -44,6 +44,9 @@ pub struct ContractConfig {
 #[derive(Default, Debug, Clone, Copy, serde::Serialize, serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct NetworkSpecs {
+    /// EVM chain id. 0 for non-EVM chains
+    #[serde(default, deserialize_with = "deser_nomad_number")]
+    pub chain_id: u64,
     /// Block time on the network
     #[serde(deserialize_with = "deser_nomad_number")]
     pub block_time: u64,

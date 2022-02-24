@@ -2,6 +2,8 @@
 
 ### Unreleased
 
+- add chain id to protocol specification block
+
 ### v0.1.0-beta.6
 
 - correct typo in Domain
