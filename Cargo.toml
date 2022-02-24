@@ -1,6 +1,6 @@
 [package]
 name = "config"
-version = "0.1.0-beta.2"
+version = "0.1.0-beta.3"
 edition = "2021"
 authors = ["James Prestwich <james@nomad.xyz>", "The Nomad Developers <team@nomad.xyz>"]
 description = "Nomad project configuration file utilities"
