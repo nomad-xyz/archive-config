@@ -109,6 +109,7 @@ export interface Domain {
   connections: Array<string>;
   configuration: ContractConfig;
   specs: NetworkSpecs;
+  bridgeConfiguration: BridgeConfiguration;
 }
 
 export interface NetworkInfo {

@@ -2,6 +2,10 @@
 
 ### Unreleased
 
+### v0.1.0-beta.10
+
+- fix: add bridgeConfiration in Domain ts type
+
 ### v0.1.0-beta.9
 
 - add deploy-time custom token inputs/outputs
