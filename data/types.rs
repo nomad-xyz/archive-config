@@ -24,6 +24,9 @@ extern "C" {
     #[wasm_bindgen(typescript_type = "CoreContracts")]
     pub type CoreContracts;
 
+    #[wasm_bindgen(typescript_type = "DeployedCustomToken")]
+    pub type DeployedCustomToken;
+
     #[wasm_bindgen(typescript_type = "EvmBridgeContracts")]
     pub type EvmBridgeContracts;
 
@@ -38,6 +41,12 @@ extern "C" {
 
     #[wasm_bindgen(typescript_type = "NetworkSpecs")]
     pub type NetworkSpecs;
+
+    #[wasm_bindgen(typescript_type = "CustomTokenSpecifier")]
+    pub type CustomTokenSpecifier;
+
+    #[wasm_bindgen(typescript_type = "BridgeConfiguration")]
+    pub type BridgeConfiguration;
 
     #[wasm_bindgen(typescript_type = "Domain")]
     pub type Domain;

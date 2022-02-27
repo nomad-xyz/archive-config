@@ -33,6 +33,10 @@
           },
           "updater": "0x71dC76C07E92325e7Cc09117AB94310Da63Fc2b9",
           "watchers": ["0x9782A3C8128f5D1BD3C9655d03181ba5b420883E"]
+        },
+        "bridgeConfiguration": {
+          "weth": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "customs": []
         }
       },
       "moonbeam": {

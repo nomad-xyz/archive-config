@@ -56,11 +56,21 @@ export interface EvmCoreContracts {
 
 export type CoreContracts = EvmCoreContracts;
 
+export interface DeployedCustomToken {
+  token: NomadLocator;
+  name: string;
+  symbol: string;
+  decimals: number;
+  controller: NomadIdentifier;
+  addresses: Proxy;
+}
+
 export interface EvmBridgeContracts {
   bridgeRouter: Proxy;
   tokenRegistry: Proxy;
   bridgeToken: Proxy;
   ethHelper?: NomadIdentifier;
+  customs?: Array<DeployedCustomToken>;
 }
 
 export type BridgeContracts = EvmBridgeContracts;
@@ -84,6 +94,18 @@ export interface NetworkSpecs {
   finalizationBlocks: number | string;
   blockTime: number | string;
   supports1559: boolean;
+}
+
+export interface CustomTokenSpecifier {
+  token: NomadLocator;
+  name: string;
+  symbol: string;
+  decimals: number;
+}
+
+export interface BridgeConfiguration {
+  weth?: NomadIdentifier;
+  customs: Array<CustomTokenSpecifier>;
 }
 
 export interface Domain {
@@ -136,6 +158,9 @@ extern "C" {
     #[wasm_bindgen(typescript_type = "CoreContracts")]
     pub type CoreContracts;
 
+    #[wasm_bindgen(typescript_type = "DeployedCustomToken")]
+    pub type DeployedCustomToken;
+
     #[wasm_bindgen(typescript_type = "EvmBridgeContracts")]
     pub type EvmBridgeContracts;
 
@@ -150,6 +175,12 @@ extern "C" {
 
     #[wasm_bindgen(typescript_type = "NetworkSpecs")]
     pub type NetworkSpecs;
+
+    #[wasm_bindgen(typescript_type = "CustomTokenSpecifier")]
+    pub type CustomTokenSpecifier;
+
+    #[wasm_bindgen(typescript_type = "BridgeConfiguration")]
+    pub type BridgeConfiguration;
 
     #[wasm_bindgen(typescript_type = "Domain")]
     pub type Domain;

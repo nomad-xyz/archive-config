@@ -40,6 +40,7 @@ pub struct ContractConfig {
     /// Governance info
     pub governance: Governance,
 }
+
 /// Core network information
 #[derive(Default, Debug, Clone, Copy, serde::Serialize, serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -58,6 +59,30 @@ pub struct NetworkSpecs {
     pub supports_1559: bool,
 }
 
+/// Specifier for deploy-time custom bridge tokens
+#[derive(Default, Debug, Clone, serde::Serialize, serde::Deserialize, Hash, Eq, PartialEq)]
+#[serde(rename_all = "camelCase")]
+pub struct CustomTokenSpecifier {
+    /// Token domain and id
+    pub token: NomadLocator,
+    /// Token name
+    pub name: String,
+    /// Token Symbol
+    pub symbol: String,
+    /// Token decimals
+    pub decimals: u8,
+}
+
+/// Configuration for bridge contracts
+#[derive(Default, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct BridgeConfiguration {
+    /// Location of WETH if any
+    pub weth: Option<NomadIdentifier>,
+    /// Custom token deployment specifiers
+    pub customs: HashSet<CustomTokenSpecifier>,
+}
+
 /// Core network information
 #[derive(Default, Debug, Clone, serde::Serialize, serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -73,6 +98,9 @@ pub struct Domain {
     pub configuration: ContractConfig,
     /// Network specifications
     pub specs: NetworkSpecs,
+    #[serde(default)]
+    /// Bridge contract configuration options
+    pub bridge_configuration: BridgeConfiguration,
 }
 
 /// Core deployment info

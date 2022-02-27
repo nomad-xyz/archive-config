@@ -2,6 +2,10 @@
 
 ### Unreleased
 
+### v0.1.0-beta.9
+
+- add deploy-time custom token inputs/outputs
+
 ### v0.1.0-beta.8
 
 - fix incorrect TS definition

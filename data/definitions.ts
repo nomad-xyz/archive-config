@@ -51,11 +51,21 @@ export interface EvmCoreContracts {
 
 export type CoreContracts = EvmCoreContracts;
 
+export interface DeployedCustomToken {
+  token: NomadLocator;
+  name: string;
+  symbol: string;
+  decimals: number;
+  controller: NomadIdentifier;
+  addresses: Proxy;
+}
+
 export interface EvmBridgeContracts {
   bridgeRouter: Proxy;
   tokenRegistry: Proxy;
   bridgeToken: Proxy;
   ethHelper?: NomadIdentifier;
+  customs?: Array<DeployedCustomToken>;
 }
 
 export type BridgeContracts = EvmBridgeContracts;
@@ -79,6 +89,18 @@ export interface NetworkSpecs {
   finalizationBlocks: number | string;
   blockTime: number | string;
   supports1559: boolean;
+}
+
+export interface CustomTokenSpecifier {
+  token: NomadLocator;
+  name: string;
+  symbol: string;
+  decimals: number;
+}
+
+export interface BridgeConfiguration {
+  weth?: NomadIdentifier;
+  customs: Array<CustomTokenSpecifier>;
 }
 
 export interface Domain {
