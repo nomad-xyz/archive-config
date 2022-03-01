@@ -55,10 +55,6 @@
           "reserveGas": 25000,
           "maximumGas": 1000000,
           "governance": {
-            "governor": {
-              "address": "0x93277b8f5939975b9e6694d5fd2837143afbf68a",
-              "domain": 6648936
-            },
             "recoveryManager": "0xea24Ac04DEFb338CA8595C3750E20166F3b4998A",
             "recoveryTimelock": 86400
           },

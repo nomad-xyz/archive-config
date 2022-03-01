@@ -86,6 +86,7 @@ export interface ContractConfig {
 }
 
 export interface NetworkSpecs {
+  chainId: number;
   finalizationBlocks: number | string;
   blockTime: number | string;
   supports1559: boolean;
