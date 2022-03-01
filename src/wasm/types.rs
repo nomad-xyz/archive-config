@@ -76,7 +76,6 @@ export interface EvmBridgeContracts {
 export type BridgeContracts = EvmBridgeContracts;
 
 export interface Governance {
-  governor?: NomadLocator;
   recoveryManager: NomadIdentifier;
   recoveryTimelock: number | string;
 }
