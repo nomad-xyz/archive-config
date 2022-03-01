@@ -137,7 +137,8 @@ impl NomadConfig {
     }
 
     /// Add a network, replacing any previous network by that name.
-    /// If the config is not valid, this function will error and have no effect.
+    /// If the resulting config is not valid, this function will error and have
+    /// no effect.
     ///
     /// ## Returns
     ///
