@@ -57,6 +57,9 @@ pub struct NetworkSpecs {
     /// True if the networks supports 1559. Otherwise false
     #[serde(default)]
     pub supports_1559: bool,
+    /// Desired number of confirmations on transactions
+    #[serde(deserialize_with = "deser_nomad_number")]
+    pub confirmations: u64,
 }
 
 /// Specifier for deploy-time custom bridge tokens

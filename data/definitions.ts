@@ -91,6 +91,7 @@ export interface NetworkSpecs {
   finalizationBlocks: number | string;
   blockTime: number | string;
   supports1559: boolean;
+  confirmations: number | string;
 }
 
 export interface CustomTokenSpecifier {

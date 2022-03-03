@@ -2,6 +2,10 @@
 
 ### Unreleased
 
+### v0.1.0-beta.12
+
+- feature: add `confirmations` to network specs
+
 ### v0.1.0-beta.11
 
 - fix: add missing chainId in NetworkSpecification ts type

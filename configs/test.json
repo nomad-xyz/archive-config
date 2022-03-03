@@ -20,7 +20,8 @@
           "chainId": 1,
           "blockTime": 15,
           "finalizationBlocks": 20,
-          "supports1559": true
+          "supports1559": true,
+          "confirmations": 3
         },
         "configuration": {
           "optimisticSeconds": 1800,
@@ -47,7 +48,8 @@
           "chainId": 1284,
           "finalizationBlocks": 20,
           "blockTime": 15,
-          "supports1559": true
+          "supports1559": true,
+          "confirmations": 2
         },
         "configuration": {
           "optimisticSeconds": 1800,
