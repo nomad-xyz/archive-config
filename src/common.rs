@@ -162,6 +162,20 @@ pub struct NomadLocator {
     pub id: NomadIdentifier,
 }
 
+/// An EVM beacon proxy
+#[derive(
+    Default, Debug, Clone, Copy, serde::Serialize, serde::Deserialize, Eq, PartialEq, Hash,
+)]
+#[serde(rename_all = "camelCase")]
+pub struct Proxy {
+    /// Implementation address
+    pub implementation: NomadIdentifier,
+    /// Proxy address
+    pub proxy: NomadIdentifier,
+    /// Beacon address
+    pub beacon: NomadIdentifier,
+}
+
 #[cfg(test)]
 mod test {
     use serde_json::json;

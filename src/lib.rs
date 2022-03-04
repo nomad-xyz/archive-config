@@ -7,6 +7,7 @@
 use std::collections::{HashMap, HashSet};
 
 pub mod agent;
+pub mod bridge;
 pub mod common;
 pub mod contracts;
 pub mod network;
@@ -23,8 +24,9 @@ pub mod wasm;
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
 use agent::AgentConfig;
+use bridge::BridgeContracts;
 use common::{NameOrDomain, NomadIdentifier};
-use contracts::{BridgeContracts, CoreContracts};
+use contracts::CoreContracts;
 use network::{Domain, NetworkInfo};
 
 /// A Nomad configuration json format

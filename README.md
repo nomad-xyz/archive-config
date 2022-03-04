@@ -38,7 +38,7 @@ To build the wasm library:
 ### Publishing
 
 - `$ cargo publish`
-- `$ ./package-it.sh && cd ts && npm publish`
+- `$ ./publish_it.sh`
 
 ### Development note
 
