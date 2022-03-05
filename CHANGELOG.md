@@ -2,6 +2,8 @@
 
 ### Unreleased
 
+### v0.1.0-beta.13
+
 - feature: add `blockExplorer` to network specs
 - feature: add `bridgeGui` to top-level config
 
