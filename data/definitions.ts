@@ -134,4 +134,5 @@ export interface NomadConfig {
   core: Record<string, CoreContracts>;
   bridge: Record<string, BridgeContracts>;
   agent: Record<string, AgentConfig>;
+  bridgeGui: Record<string, AppConfig>;
 }

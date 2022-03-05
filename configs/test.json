@@ -21,7 +21,8 @@
           "blockTime": 15,
           "finalizationBlocks": 20,
           "supports1559": true,
-          "confirmations": 3
+          "confirmations": 3,
+          "blockExplorer": "http://TODO"
         },
         "configuration": {
           "optimisticSeconds": 1800,
@@ -49,7 +50,8 @@
           "finalizationBlocks": 20,
           "blockTime": 15,
           "supports1559": true,
-          "confirmations": 2
+          "confirmations": 2,
+          "blockExplorer": "http://TODO"
         },
         "configuration": {
           "optimisticSeconds": 1800,
@@ -221,5 +223,6 @@
         "interval": 100
       }
     }
-  }
+  },
+  "bridgeGui": {}
 }

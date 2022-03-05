@@ -1,5 +1,8 @@
 #[wasm_bindgen]
 extern "C" {
+    #[wasm_bindgen(typescript_type = "AddConfig")]
+    pub type AppConfig;
+
     #[wasm_bindgen(typescript_type = "NomadLocator")]
     pub type NomadLocator;
 
