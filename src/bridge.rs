@@ -54,3 +54,11 @@ impl Default for BridgeContracts {
         BridgeContracts::Evm(Default::default())
     }
 }
+
+/// EVM Bridge Contracts
+#[derive(Default, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct AppConfig {
+    display_name: String,
+    native_token_symbol: String,
+}

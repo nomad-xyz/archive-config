@@ -1,6 +1,11 @@
 export type NomadIdentifier = string;
 export type NameOrDomain = number | string;
 
+export interface AppConfig {
+  displayName: string;
+  nativeTokenSymbol: string;
+}
+
 export interface NomadLocator {
   domain: number;
   id: NomadIdentifier;
@@ -92,6 +97,7 @@ export interface NetworkSpecs {
   blockTime: number | string;
   supports1559: boolean;
   confirmations: number | string;
+  blockExplorer: string;
 }
 
 export interface CustomTokenSpecifier {
@@ -128,4 +134,5 @@ export interface NomadConfig {
   core: Record<string, CoreContracts>;
   bridge: Record<string, BridgeContracts>;
   agent: Record<string, AgentConfig>;
+  bridgeGui: Record<string, AppConfig>;
 }

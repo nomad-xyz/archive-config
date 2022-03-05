@@ -42,7 +42,7 @@ pub struct ContractConfig {
 }
 
 /// Core network information
-#[derive(Default, Debug, Clone, Copy, serde::Serialize, serde::Deserialize)]
+#[derive(Default, Debug, Clone, serde::Serialize, serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct NetworkSpecs {
     /// EVM chain id. 0 for non-EVM chains
@@ -60,6 +60,8 @@ pub struct NetworkSpecs {
     /// Desired number of confirmations on transactions
     #[serde(deserialize_with = "deser_nomad_number")]
     pub confirmations: u64,
+    /// Block explorer URL
+    pub block_explorer: String,
 }
 
 /// Specifier for deploy-time custom bridge tokens

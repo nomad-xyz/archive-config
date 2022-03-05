@@ -2,6 +2,9 @@
 
 ### Unreleased
 
+- feature: add `blockExplorer` to network specs
+- feature: add `bridgeGui` to top-level config
+
 ### v0.1.0-beta.12
 
 - feature: add `confirmations` to network specs

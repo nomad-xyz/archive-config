@@ -24,7 +24,7 @@ pub mod wasm;
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
 use agent::AgentConfig;
-use bridge::BridgeContracts;
+use bridge::{AppConfig, BridgeContracts};
 use common::{NameOrDomain, NomadIdentifier};
 use contracts::CoreContracts;
 use network::{Domain, NetworkInfo};
@@ -49,6 +49,8 @@ pub struct NomadConfig {
     bridge: HashMap<String, BridgeContracts>,
     /// Agent configuration
     agent: HashMap<String, AgentConfig>,
+    /// Bridge application GUI configuration
+    pub bridge_gui: HashMap<String, AppConfig>,
 }
 
 impl NomadConfig {
