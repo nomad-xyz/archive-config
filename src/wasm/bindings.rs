@@ -107,7 +107,7 @@ pub fn add_bridge(
     bridge: &BridgeContracts,
 ) -> JsResult<NomadConfig> {
     let mut config = deser_config!(config);
-    let bridge = deser!(bridge, crate::contracts::BridgeContracts);
+    let bridge = deser!(bridge, crate::bridge::BridgeContracts);
     config.add_bridge(name, bridge).map_err(format_errs)?;
     ret_config!(config)
 }

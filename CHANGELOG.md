@@ -2,6 +2,10 @@
 
 ### Unreleased
 
+### v0.1.0-beta.14
+
+- fix: correct import in wasm bindings
+
 ### v0.1.0-beta.13
 
 - feature: add `blockExplorer` to network specs
