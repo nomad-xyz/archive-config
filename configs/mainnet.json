@@ -5,7 +5,7 @@
   "rpcs": {
     "moonbeam": ["https://moonriver.api.onfinality.io/public"],
     "ethereum": ["https://main-light.eth.linkpool.io/"],
-    "milkomedaC1": [""]
+    "milkomedaC1": []
   },
   "protocol": {
     "governor": {
@@ -50,7 +50,7 @@
           "finalizationBlocks": 20,
           "blockTime": 15,
           "supports1559": true,
-          "confirmations": 2
+          "confirmations": 3
         },
         "configuration": {
           "optimisticSeconds": 1800,
@@ -71,19 +71,19 @@
         "connections": ["ethereum"],
         "specs": {
           "chainId": 2001,
-          // "finalizationBlocks": 20,
-          // "blockTime": 15,
-          // "supports1559": true,
-          // "confirmations": 2
+          "finalizationBlocks": 15,
+          "blockTime": 4,
+          "supports1559": true,
+          "confirmations": 2
         },
         "configuration": {
-          // "optimisticSeconds": 1800,
-          // "processGas": 850000,
-          // "reserveGas": 25000,
-          // "maximumGas": 1000000,
+          "optimisticSeconds": 1800,
+          "processGas": 850000,
+          "reserveGas": 25000,
+          "maximumGas": 1000000,
           "governance": {
             "recoveryManager": "0xea24Ac04DEFb338CA8595C3750E20166F3b4998A",
-            // "recoveryTimelock": 86400
+            "recoveryTimelock": 86400
           },
           "updater": "0xE293D129D9Fd291A8115Cb373BB934586055427d",
           "watchers": [""]
@@ -224,7 +224,7 @@
       },
       "ethHelper": "0x0cB0D686278aE02Fc9fD50480212d1F08D986A31"
     }
-  },
+  }
   // "agent": {
   //   "ethereum": {
   //     "rpcStyle": "ethereum",

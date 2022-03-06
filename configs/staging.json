@@ -1,12 +1,18 @@
 {
   "version": 0,
   "environment": "staging",
-  "networks": ["rinkeby", "kovan", "moonbasealpha", "milkomedatestnet", "evmostestnet"],
+  "networks": [
+    "rinkeby",
+    "kovan",
+    "moonbasealpha",
+    "milkomedatestnet",
+    "evmostestnet"
+  ],
   "rpcs": {
-    "rinkeby": [""],
-    "kovan": [""],
-    "milkomedatestnet": [""],
-    "evmostestnet": [""]
+    "rinkeby": [],
+    "kovan": [],
+    "milkomedatestnet": [],
+    "evmostestnet": []
   },
   "protocol": {
     "governor": {
@@ -17,22 +23,27 @@
       "rinkeby": {
         "name": "rinkeby",
         "domain": 2000,
-        "connections": ["kovan", "moonbasealpha", "milkomedatestnet", "evmostestnet"],
+        "connections": [
+          "kovan",
+          "moonbasealpha",
+          "milkomedatestnet",
+          "evmostestnet"
+        ],
         "specs": {
           "chainId": 4,
-          // "blockTime": 15,
-          // "finalizationBlocks": 20,
-          // "supports1559": true,
-          // "confirmations": 3
+          "blockTime": 15,
+          "finalizationBlocks": 10,
+          "supports1559": true,
+          "confirmations": 2
         },
         "configuration": {
-          // "optimisticSeconds": 1800,
-          // "processGas": 850000,
-          // "reserveGas": 25000,
-          // "maximumGas": 1000000,
+          "optimisticSeconds": 1800,
+          "processGas": 850000,
+          "reserveGas": 15000,
+          "maximumGas": 1000000,
           "governance": {
             "recoveryManager": "0x812c096810e8eFAA73efF841B601Ab82a7be9aB0",
-            // "recoveryTimelock": 86400
+            "recoveryTimelock": 86400
           },
           "updater": "0x6b237D5AF6E5116Fe27116C0F6257Caa6721d043",
           "watchers": [""]
@@ -48,19 +59,19 @@
         "connections": ["rinkeby"],
         "specs": {
           "chainId": 42,
-          // "blockTime": 15,
-          // "finalizationBlocks": 20,
-          // "supports1559": true,
-          // "confirmations": 3
+          "blockTime": 4,
+          "finalizationBlocks": 5,
+          "supports1559": false,
+          "confirmations": 2
         },
         "configuration": {
-          // "optimisticSeconds": 1800,
-          // "processGas": 850000,
-          // "reserveGas": 25000,
-          // "maximumGas": 1000000,
+          "optimisticSeconds": 1800,
+          "processGas": 850000,
+          "reserveGas": 15000,
+          "maximumGas": 1000000,
           "governance": {
             "recoveryManager": "0xa4849f1D96B26066f9C631FCdc8F1457D27Fb5EC",
-            // "recoveryTimelock": 86400
+            "recoveryTimelock": 86400
           },
           "updater": "0x5340fe2F454B861E71647bd80596A3463e095C9c",
           "watchers": [""]
@@ -76,19 +87,19 @@
         "connections": ["rinkeby"],
         "specs": {
           "chainId": 1287,
-          // "blockTime": 15,
-          // "finalizationBlocks": 20,
-          // "supports1559": true,
-          // "confirmations": 3
+          "blockTime": 17,
+          "finalizationBlocks": 20,
+          "supports1559": true,
+          "confirmations": 3
         },
         "configuration": {
-          // "optimisticSeconds": 1800,
-          // "processGas": 850000,
-          // "reserveGas": 25000,
-          // "maximumGas": 1000000,
+          "optimisticSeconds": 1800,
+          "processGas": 850000,
+          "reserveGas": 15000,
+          "maximumGas": 1000000,
           "governance": {
             "recoveryManager": "0xa4849f1D96B26066f9C631FCdc8F1457D27Fb5EC",
-            // "recoveryTimelock": 86400
+            "recoveryTimelock": 86400
           },
           "updater": "0xD39dd43eFDD867939A2F070469cB3e1252827466",
           "watchers": [""]
@@ -228,7 +239,7 @@
       },
       "ethHelper": "0x53976bBAf52e7B6770BfF6a24d26d3E4cac3DA59"
     }
-  },
+  }
   // "agent": {
   //   "rinkeby": {
   //     "rpcStyle": "ethereum",
