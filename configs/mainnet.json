@@ -86,10 +86,10 @@
             "recoveryTimelock": 86400
           },
           "updater": "0xE293D129D9Fd291A8115Cb373BB934586055427d",
-          "watchers": [""]
+          "watchers": ["0x06D8902cfae8235047DC7783875279311798c715"]
         },
         "bridgeConfiguration": {
-          "weth": "",
+          "weth": "0xAE83571000aF4499798d1e3b0fA0070EB3A3E3F9",
           "customs": []
         }
       }
@@ -110,7 +110,6 @@
         "proxy": "0x92d3404a7E6c91455BbD81475Cd9fAd96ACFF4c8",
         "beacon": "0x063e871f8DB991CEAd34B557A00B157B360084cc"
       },
-      // are these the right replica contracts? Different from what was listed in test.json
       "replicas": {
         "milkomedaC1": {
           "implementation": "0x7F58bb8311DB968AB110889F2Dfa04ab7E8E831B",
