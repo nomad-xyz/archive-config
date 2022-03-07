@@ -46,7 +46,7 @@
             "recoveryTimelock": 86400
           },
           "updater": "0x6b237D5AF6E5116Fe27116C0F6257Caa6721d043",
-          "watchers": [""]
+          "watchers": ["0x37B1E57b43e755dA8384D05cf437D88D0274Bfbd"]
         },
         "bridgeConfiguration": {
           "weth": "",
@@ -74,7 +74,7 @@
             "recoveryTimelock": 86400
           },
           "updater": "0x5340fe2F454B861E71647bd80596A3463e095C9c",
-          "watchers": [""]
+          "watchers": ["0xa031973b293B924f6C848202Bf1dc3107fDE4D1e"]
         },
         "bridgeConfiguration": {
           "weth": "",
@@ -102,7 +102,7 @@
             "recoveryTimelock": 86400
           },
           "updater": "0xD39dd43eFDD867939A2F070469cB3e1252827466",
-          "watchers": [""]
+          "watchers": ["0x1795f9A0a6853D6328241e9Dc37203cA545C3b79"]
         },
         "bridgeConfiguration": {
           "weth": "",
