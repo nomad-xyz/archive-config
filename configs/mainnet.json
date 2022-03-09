@@ -5,7 +5,7 @@
   "rpcs": {
     "moonbeam": ["https://moonriver.api.onfinality.io/public"],
     "ethereum": ["https://main-light.eth.linkpool.io/"],
-    "milkomedaC1": []
+    "milkomedaC1": ["https://rpc.c1.milkomeda.com:8545"]
   },
   "protocol": {
     "governor": {
@@ -15,14 +15,16 @@
     "networks": {
       "ethereum": {
         "name": "ethereum",
-        "domain": 25393,
+        "domain": 6648936,
         "connections": ["moonbeam", "milkomedaC1"],
         "specs": {
           "chainId": 1,
           "blockTime": 15,
           "finalizationBlocks": 20,
           "supports1559": true,
-          "confirmations": 3
+          "confirmations": 3,
+          "deployHeight": 13983724,
+          "indexPageSize": 2000
         },
         "configuration": {
           "optimisticSeconds": 1800,
@@ -50,7 +52,9 @@
           "finalizationBlocks": 20,
           "blockTime": 15,
           "supports1559": true,
-          "confirmations": 3
+          "confirmations": 3,
+          "deployHeight": 171256,
+          "indexPageSize": 2000
         },
         "configuration": {
           "optimisticSeconds": 1800,
@@ -67,14 +71,16 @@
       },
       "milkomedaC1": {
         "name": "milkomedaC1",
-        "domain": 6648936,
+        "domain": 25393,
         "connections": ["ethereum"],
         "specs": {
           "chainId": 2001,
           "finalizationBlocks": 15,
           "blockTime": 4,
           "supports1559": true,
-          "confirmations": 2
+          "confirmations": 2,
+          "deployHeight": 1356181,
+          "indexPageSize": 2000
         },
         "configuration": {
           "optimisticSeconds": 1800,
@@ -223,106 +229,91 @@
       },
       "ethHelper": "0x0cB0D686278aE02Fc9fD50480212d1F08D986A31"
     }
+  },
+  "agent": {
+    "ethereum": {
+      "rpcStyle": "ethereum",
+      "db": "/usr/share/nomad",
+      "logging": {
+        "level": "debug",
+        "fmt": "json"
+      },
+      "updater": {
+        "enabled": true,
+        "interval": 5
+      },
+      "relayer": {
+        "enabled": true,
+        "interval": 10
+      },
+      "processor": {
+        "enabled": true,
+        "interval": 5
+      },
+      "watcher": {
+        "enabled": true,
+        "interval": 10
+      },
+      "kathy": {
+        "enabled": false,
+        "interval": 100
+      }
+    },
+    "moonbeam": {
+      "rpcStyle": "ethereum",
+      "db": "/path/to/db",
+      "logging": {
+        "level": "debug",
+        "fmt": "json"
+      },
+      "updater": {
+        "enabled": true,
+        "interval": 5
+      },
+      "relayer": {
+        "enabled": true,
+        "interval": 10
+      },
+      "processor": {
+        "enabled": true,
+        "interval": 5
+      },
+      "watcher": {
+        "enabled": true,
+        "interval": 10
+      },
+      "kathy": {
+        "enabled": false,
+        "interval": 100
+      }
+    },
+    "milkomedaC1": {
+      "rpcStyle": "ethereum",
+      "db": "/path/to/db",
+      "logging": {
+        "level": "debug",
+        "fmt": "json"
+      },
+      "updater": {
+        "enabled": true,
+        "interval": 5
+      },
+      "relayer": {
+        "enabled": true,
+        "interval": 10
+      },
+      "processor": {
+        "enabled": true,
+        "interval": 5
+      },
+      "watcher": {
+        "enabled": true,
+        "interval": 10
+      },
+      "kathy": {
+        "enabled": false,
+        "interval": 100
+      }
+    }
   }
-  // "agent": {
-  //   "ethereum": {
-  //     "rpcStyle": "ethereum",
-  //     "db": "/path/to/db",
-  //     "logging": {
-  //       "level": "debug",
-  //       "fmt": "json"
-  //     },
-  //     "index": {
-  //       "from": "13983724",
-  //       "chunk": "2000"
-  //     },
-  //     "updater": {
-  //       "enabled": true,
-  //       "interval": 5
-  //     },
-  //     "relayer": {
-  //       "enabled": true,
-  //       "interval": 10
-  //     },
-  //     "processor": {
-  //       "enabled": true,
-  //       "interval": 5
-  //     },
-  //     "watcher": {
-  //       "enabled": true,
-  //       "interval": 10
-  //     },
-  //     "kathy": {
-  //       "enabled": false,
-  //       "signers": {},
-  //       "interval": 100
-  //     }
-  //   },
-  //   "moonbeam": {
-  //     "rpcStyle": "ethereum",
-  //     "db": "/path/to/db",
-  //     "logging": {
-  //       "level": "debug",
-  //       "fmt": "json"
-  //     },
-  //     "index": {
-  //       "from": 171256,
-  //       "chunk": 2000
-  //     },
-  //     "updater": {
-  //       "enabled": true,
-  //       "interval": 5
-  //     },
-  //     "relayer": {
-  //       "enabled": true,
-  //       "interval": 10
-  //     },
-  //     "processor": {
-  //       "enabled": true,
-  //       "interval": 5
-  //     },
-  //     "watcher": {
-  //       "enabled": true,
-  //       "interval": 10
-  //     },
-  //     "kathy": {
-  //       "enabled": false,
-  //       "signers": {},
-  //       "interval": 100
-  //     }
-  //   },
-  //   "milkomedaC1": {
-  //     "rpcStyle": "ethereum",
-  //     "db": "/path/to/db",
-  //     "logging": {
-  //       "level": "debug",
-  //       "fmt": "json"
-  //     },
-  //     "index": {
-  //       "from": 171256,
-  //       "chunk": 2000
-  //     },
-  //     "updater": {
-  //       "enabled": true,
-  //       "interval": 5
-  //     },
-  //     "relayer": {
-  //       "enabled": true,
-  //       "interval": 10
-  //     },
-  //     "processor": {
-  //       "enabled": true,
-  //       "interval": 5
-  //     },
-  //     "watcher": {
-  //       "enabled": true,
-  //       "interval": 10
-  //     },
-  //     "kathy": {
-  //       "enabled": false,
-  //       "signers": {},
-  //       "interval": 100
-  //     }
-  //   }
-  // }
 }
