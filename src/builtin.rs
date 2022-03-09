@@ -25,13 +25,25 @@ pub fn get_builtin(name: &str) -> Option<NomadConfig> {
     BUILTINS
         .get_or_init(|| {
             let mut map: HashMap<_, _> = Default::default();
-            map.insert("test", serde_json::from_str(TEST_JSON).unwrap());
+            map.insert(
+                "test",
+                serde_json::from_str(TEST_JSON).expect("Configuration test.json is malformed"),
+            );
             map.insert(
                 "development",
-                serde_json::from_str(DEVELOPMENT_JSON).unwrap(),
+                serde_json::from_str(DEVELOPMENT_JSON)
+                    .expect("Configuration development.json is malformed"),
             );
-            map.insert("staging", serde_json::from_str(STAGING_JSON).unwrap());
-            map.insert("production", serde_json::from_str(PRODUCTION_JSON).unwrap());
+            map.insert(
+                "staging",
+                serde_json::from_str(STAGING_JSON)
+                    .expect("Configuration staging.json is malformed"),
+            );
+            map.insert(
+                "production",
+                serde_json::from_str(PRODUCTION_JSON)
+                    .expect("Configuration production.json is malformed"),
+            );
             map
         })
         .get(name)
