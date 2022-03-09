@@ -5,14 +5,14 @@
     "rinkeby",
     "kovan",
     "moonbasealpha",
-    "milkomedatestnet",
+    "milkomedaC1testnet",
     "evmostestnet"
   ],
   "rpcs": {
     "rinkeby": [""],
     "kovan": [""],
-    "milkomedatestnet": [""],
-    "evmostestnet": [""]
+    "milkomedaC1testnet": ["http://use-util.cloud.milkomeda.com:8545"],
+    "evmostestnet": ["https://evmos-archive-testnet.api.bdnodes.net:8545"]
   },
   "protocol": {
     "governor": {
@@ -26,7 +26,7 @@
         "connections": [
           "kovan",
           "moonbasealpha",
-          "milkomedatestnet",
+          "milkomedaC1testnet",
           "evmostestnet"
         ],
         "specs": {
@@ -34,7 +34,9 @@
           "blockTime": 15,
           "finalizationBlocks": 10,
           "supports1559": true,
-          "confirmations": 2
+          "confirmations": 2,
+          "deployHeight": 10024912,
+          "indexPageSize": 2000
         },
         "configuration": {
           "optimisticSeconds": 10,
@@ -46,10 +48,10 @@
             "recoveryTimelock": 180
           },
           "updater": "0x4177372FD9581ceb2367e0Ce84adC5DAD9DF8D55",
-          "watchers": [""]
+          "watchers": ["0x20aC2FD664bA5406A7262967C34107e708dCb18E"]
         },
         "bridgeConfiguration": {
-          "weth": "",
+          "weth": "0xc778417E063141139Fce010982780140Aa0cD5Ab",
           "customs": []
         }
       },
@@ -62,7 +64,9 @@
           "blockTime": 4,
           "finalizationBlocks": 5,
           "supports1559": false,
-          "confirmations": 2
+          "confirmations": 2,
+          "deployHeight": 29367895,
+          "indexPageSize": 2000
         },
         "configuration": {
           "optimisticSeconds": 10,
@@ -74,10 +78,10 @@
             "recoveryTimelock": 180
           },
           "updater": "0x4177372FD9581ceb2367e0Ce84adC5DAD9DF8D55",
-          "watchers": [""]
+          "watchers": ["0x20aC2FD664bA5406A7262967C34107e708dCb18E"]
         },
         "bridgeConfiguration": {
-          "weth": "",
+          "weth": "0xd0a1e359811322d97991e03f863a0c30c2cf029c",
           "customs": []
         }
       },
@@ -90,7 +94,9 @@
           "blockTime": 17,
           "finalizationBlocks": 20,
           "supports1559": true,
-          "confirmations": 3
+          "confirmations": 3,
+          "deployHeight": 1555095,
+          "indexPageSize": 2000
         },
         "configuration": {
           "optimisticSeconds": 10,
@@ -102,15 +108,15 @@
             "recoveryTimelock": 180
           },
           "updater": "0x4177372FD9581ceb2367e0Ce84adC5DAD9DF8D55",
-          "watchers": [""]
+          "watchers": ["0x20aC2FD664bA5406A7262967C34107e708dCb18E"]
         },
         "bridgeConfiguration": {
-          "weth": "",
+          "weth": "0x674421e9567653ee76e96feea3b2b2966d000dbd",
           "customs": []
         }
       },
-      "milkomedatestnet": {
-        "name": "milkomedaC1",
+      "milkomedaC1testnet": {
+        "name": "milkomedaC1testnet",
         "domain": 8000,
         "connections": ["rinkeby"],
         "specs": {
@@ -118,7 +124,9 @@
           "blockTime": 4,
           "finalizationBlocks": 20,
           "supports1559": true,
-          "confirmations": 3
+          "confirmations": 3,
+          "deployHeight": 1771254,
+          "indexPageSize": 2000
         },
         "configuration": {
           "optimisticSeconds": 10,
@@ -130,10 +138,10 @@
             "recoveryTimelock": 180
           },
           "updater": "0x4177372FD9581ceb2367e0Ce84adC5DAD9DF8D55",
-          "watchers": [""]
+          "watchers": ["0x20aC2FD664bA5406A7262967C34107e708dCb18E"]
         },
         "bridgeConfiguration": {
-          "weth": "",
+          "weth": "0x6942F4eD908bF1F294e25497624ad228d178D54C",
           "customs": []
         }
       },
@@ -146,7 +154,9 @@
           "blockTime": 7,
           "finalizationBlocks": 20,
           "supports1559": true,
-          "confirmations": 3
+          "confirmations": 3,
+          "deployHeight": 42494,
+          "indexPageSize": 2000
         },
         "configuration": {
           "optimisticSeconds": 10,
@@ -158,10 +168,10 @@
             "recoveryTimelock": 180
           },
           "updater": "0x4177372FD9581ceb2367e0Ce84adC5DAD9DF8D55",
-          "watchers": [""]
+          "watchers": ["0x20aC2FD664bA5406A7262967C34107e708dCb18E"]
         },
         "bridgeConfiguration": {
-          "weth": "",
+          "weth": "0xEE8003bdB024a4195D433c555d55AA663B8C022C",
           "customs": []
         }
       }
@@ -193,7 +203,7 @@
           "proxy": "0xA062dcaEc568Ccf01560F168D0638af2fE663019",
           "beacon": "0x0eD8d83d918865CE2D52da2e0dc1bC98a048A4b1"
         },
-        "milkomedatestnet": {
+        "milkomedaC1testnet": {
           "implementation": "0x2e54DAA00F7e7dc2BCf55Fd719ff040BD0549A0C",
           "proxy": "0xf9EdA8f3ee170b64c6640094e9a8bF9cb9f359f3",
           "beacon": "0x0eD8d83d918865CE2D52da2e0dc1bC98a048A4b1"
@@ -249,7 +259,7 @@
         }
       }
     },
-    "milkomedatestnet": {
+    "milkomedaC1testnet": {
       "upgradeBeaconController": "0x7A9CA7500C8D6f66FACD373f64F65fC8E9e11742",
       "xAppConnectionManager": "0xf116142af150F8E2b939C14f746a67Ed6788266C",
       "updaterManager": "0xd685f14522Ea053A6aC7CcDEB2c1CD1E54714dA6",
@@ -349,7 +359,7 @@
       },
       "ethHelper": "0x71a0CAfbc6bd7F16188B141850d9Bdce47981B1c"
     },
-    "milkomedatestnet": {
+    "milkomedaC1testnet": {
       "bridgeRouter": {
         "implementation": "0xd7A0Ef9172f313CE07a6A5753B39E28dcDa470DE",
         "proxy": "0x4C2e47cA4Dd7b93A62730e463BE43A0EA01c5A10",
@@ -385,82 +395,151 @@
       },
       "ethHelper": "0xac3f0fB1De6A8C2d93471aE3A1F8bE6968B1FbcF"
     }
+  },
+  "agent": {
+    "rinkeby": {
+      "rpcStyle": "ethereum",
+      "db": "/usr/share/nomad",
+      "logging": {
+        "level": "debug",
+        "fmt": "json"
+      },
+      "updater": {
+        "enabled": true,
+        "interval": 5
+      },
+      "relayer": {
+        "enabled": true,
+        "interval": 10
+      },
+      "processor": {
+        "enabled": true,
+        "interval": 5
+      },
+      "watcher": {
+        "enabled": true,
+        "interval": 10
+      },
+      "kathy": {
+        "enabled": true,
+        "interval": 500
+      }
+    },
+    "kovan": {
+      "rpcStyle": "ethereum",
+      "db": "/usr/share/nomad",
+      "logging": {
+        "level": "debug",
+        "fmt": "json"
+      },
+      "updater": {
+        "enabled": true,
+        "interval": 5
+      },
+      "relayer": {
+        "enabled": true,
+        "interval": 10
+      },
+      "processor": {
+        "enabled": true,
+        "indexOnly": false,
+        "interval": 5
+      },
+      "watcher": {
+        "enabled": true,
+        "interval": 10
+      },
+      "kathy": {
+        "enabled": true,
+        "interval": 500
+      }
+    },
+    "moonbasealpha": {
+      "rpcStyle": "ethereum",
+      "db": "/usr/share/nomad",
+      "logging": {
+        "level": "debug",
+        "fmt": "json"
+      },
+      "updater": {
+        "enabled": true,
+        "interval": 5
+      },
+      "relayer": {
+        "enabled": true,
+        "interval": 10
+      },
+      "processor": {
+        "enabled": true,
+        "indexOnly": false,
+        "interval": 5
+      },
+      "watcher": {
+        "enabled": true,
+        "interval": 10
+      },
+      "kathy": {
+        "enabled": true,
+        "interval": 500
+      }
+    },
+    "milkomedaC1testnet": {
+      "rpcStyle": "ethereum",
+      "db": "/usr/share/nomad",
+      "logging": {
+        "level": "debug",
+        "fmt": "json"
+      },
+      "updater": {
+        "enabled": true,
+        "interval": 5
+      },
+      "relayer": {
+        "enabled": true,
+        "interval": 10
+      },
+      "processor": {
+        "enabled": true,
+        "indexOnly": false,
+        "interval": 5
+      },
+      "watcher": {
+        "enabled": true,
+        "interval": 10
+      },
+      "kathy": {
+        "enabled": true,
+        "interval": 500
+      }
+    },
+    "evmostestnet": {
+      "rpcStyle": "ethereum",
+      "db": "/usr/share/nomad",
+      "logging": {
+        "level": "debug",
+        "fmt": "json"
+      },
+      "updater": {
+        "enabled": true,
+        "interval": 5
+      },
+      "relayer": {
+        "enabled": true,
+        "interval": 10
+      },
+      "processor": {
+        "enabled": true,
+        "indexOnly": false,
+        "interval": 5
+      },
+      "watcher": {
+        "enabled": true,
+        "interval": 10
+      },
+      "kathy": {
+        "enabled": false,
+        "interval": 100
+      }
+    }
   }
-  // "agent": {
-  //   "rinkeby": {
-  //     "rpcStyle": "ethereum",
-  //     "db": "/path/to/db",
-  //     "logging": {
-  //       "level": "debug",
-  //       "fmt": "json"
-  //     },
-  //     "index": {
-  //       "from": "13983724",
-  //       "chunk": "2000"
-  //     },
-  //     "updater": {
-  //       "enabled": true,
-  //       "interval": 5
-  //     },
-  //     "relayer": {
-  //       "enabled": true,
-  //       "interval": 10
-  //     },
-  //     "processor": {
-  //       "enabled": true,
-  //       "interval": 5
-  //     },
-  //     "watcher": {
-  //       "enabled": true,
-  //       "interval": 10
-  //     },
-  //     "kathy": {
-  //       "enabled": false,
-  //       "signers": {},
-  //       "interval": 100
-  //     }
-  //   },
-  //   "kovan": {
-  //     "rpcStyle": "ethereum",
-  //     "db": "/path/to/db",
-  //     "logging": {
-  //       "level": "debug",
-  //       "fmt": "json"
-  //     },
-  //     "index": {
-  //       "from": 171256,
-  //       "chunk": 2000
-  //     },
-  //     "updater": {
-  //       "enabled": true,
-  //       "interval": 5
-  //     },
-  //     "relayer": {
-  //       "enabled": true,
-  //       "interval": 10
-  //     },
-  //     "processor": {
-  //       "enabled": true,
-  //       "interval": 5
-  //     },
-  //     "watcher": {
-  //       "enabled": true,
-  //       "interval": 10
-  //     },
-  //     "kathy": {
-  //       "enabled": false,
-  //       "signers": {},
-  //       "interval": 100
-  //     }
-  //   },
-  //   "moonbasealpha": {
-  //
-  //   },
-  //   "milkomedatestnet": {
-  //
-  //   },
-  //   "evmostestnet": {
-  //
-  //   },
-  // }
 }
