@@ -28,7 +28,7 @@ pub struct DeployedCustomToken {
 #[derive(Default, Debug, Clone, serde::Serialize, serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct EvmBridgeContracts {
-    /// Contract Deploy Height 
+    /// Contract Deploy Height
     #[serde(default, deserialize_with = "deser_nomad_number")]
     pub deploy_height: u64,
     /// Bridge Route proxy

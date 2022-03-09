@@ -10,7 +10,7 @@ use crate::common::deser_nomad_number;
 #[derive(Default, Debug, Clone, serde::Serialize, serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct EvmCoreContracts {
-    /// Contract Deploy Height 
+    /// Contract Deploy Height
     #[serde(default, deserialize_with = "deser_nomad_number")]
     pub deploy_height: u64,
     /// UBC address

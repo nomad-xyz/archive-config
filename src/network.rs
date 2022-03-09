@@ -64,7 +64,7 @@ pub struct NetworkSpecs {
     pub block_explorer: String,
     /// Number of blocks to include in a page while indexing
     #[serde(deserialize_with = "deser_nomad_number")]
-    pub index_page_size: u64
+    pub index_page_size: u64,
 }
 
 /// Specifier for deploy-time custom bridge tokens
