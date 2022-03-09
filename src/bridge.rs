@@ -4,6 +4,8 @@ use std::collections::HashSet;
 
 use crate::common::{NomadIdentifier, NomadLocator, Proxy};
 
+use crate::common::deser_nomad_number;
+
 /// Deploy-time custom tokens
 #[derive(Default, Debug, Clone, serde::Serialize, serde::Deserialize, Eq, PartialEq, Hash)]
 #[serde(rename_all = "camelCase")]
@@ -26,6 +28,9 @@ pub struct DeployedCustomToken {
 #[derive(Default, Debug, Clone, serde::Serialize, serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct EvmBridgeContracts {
+    /// Contract Deploy Height 
+    #[serde(default, deserialize_with = "deser_nomad_number")]
+    pub deploy_height: u64,
     /// Bridge Route proxy
     pub bridge_router: Proxy,
     /// Token Registry proxy

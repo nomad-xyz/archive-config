@@ -22,11 +22,6 @@ export interface LogConfig {
   level: string;
 }
 
-export interface IndexConfig {
-  from: number | string;
-  chunk: number | string;
-}
-
 export interface BaseAgentConfig {
   enabled: boolean;
   interval: number | string;
@@ -37,7 +32,6 @@ export interface AgentConfig {
   timelag: number | string;
   db: string;
   logging: LogConfig;
-  index: IndexConfig;
   updater: BaseAgentConfig;
   relayer: BaseAgentConfig;
   processor: BaseAgentConfig;
@@ -52,6 +46,7 @@ export interface Proxy {
 }
 
 export interface EvmCoreContracts {
+  deployHeight: number,
   upgradeBeaconController: NomadIdentifier;
   xAppConnectionManager: NomadIdentifier;
   updaterManager: NomadIdentifier;
@@ -72,6 +67,7 @@ export interface DeployedCustomToken {
 }
 
 export interface EvmBridgeContracts {
+  deployHeight: number,
   bridgeRouter: Proxy;
   tokenRegistry: Proxy;
   bridgeToken: Proxy;
@@ -104,6 +100,7 @@ export interface NetworkSpecs {
   supports1559: boolean;
   confirmations: number | string;
   blockExplorer: string;
+  indexPageSize: number;
 }
 
 export interface CustomTokenSpecifier {

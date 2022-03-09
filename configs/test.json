@@ -22,7 +22,8 @@
           "finalizationBlocks": 20,
           "supports1559": true,
           "confirmations": 3,
-          "blockExplorer": "http://TODO"
+          "blockExplorer": "http://TODO",
+          "indexPageSize": 2000
         },
         "configuration": {
           "optimisticSeconds": 1800,
@@ -51,7 +52,8 @@
           "blockTime": 15,
           "supports1559": true,
           "confirmations": 2,
-          "blockExplorer": "http://TODO"
+          "blockExplorer": "http://TODO",
+          "indexPageSize": 2000
         },
         "configuration": {
           "optimisticSeconds": 1800,
@@ -74,6 +76,7 @@
   },
   "core": {
     "ethereum": {
+      "deployHeight": 13983724,
       "upgradeBeaconController": "0xdB378579c2Af11817EEA21474A39F95B5b9DfD7e",
       "xAppConnectionManager": "0xFe8874778f946Ac2990A29eba3CFd50760593B2F",
       "updaterManager": "0x9272C9d5fa902Ef3804EC81e0333Ae420D57f715",
@@ -96,6 +99,7 @@
       }
     },
     "moonbeam": {
+      "deployHeight": 171256,
       "upgradeBeaconController": "0xdCe06fFE78AaAc2894109A56BA83C3C33B073F44",
       "xAppConnectionManager": "0xdB378579c2Af11817EEA21474A39F95B5b9DfD7e",
       "updaterManager": "0x2e09EdD238EeaEA6e4da705fbe5922B1979e03aC",
@@ -120,6 +124,7 @@
   },
   "bridge": {
     "ethereum": {
+      "deployHeight": 13983724,
       "bridgeRouter": {
         "implementation": "0xD3dfD3eDe74E0DCEBC1AA685e151332857efCe2d",
         "proxy": "0x88A69B4E698A4B090DF6CF5Bd7B2D47325Ad30A3",
@@ -138,6 +143,7 @@
       "ethHelper": "0x2d6775C1673d4cE55e1f827A0D53e62C43d1F304"
     },
     "moonbeam": {
+      "deployHeight": 171256,
       "bridgeRouter": {
         "implementation": "0x4D5ff8A01ed833E11Aba43821D2881A5F2911F98",
         "proxy": "0xD3dfD3eDe74E0DCEBC1AA685e151332857efCe2d",
@@ -159,14 +165,10 @@
   "agent": {
     "ethereum": {
       "rpcStyle": "ethereum",
-      "db": "/path/to/db",
+      "db": "/usr/share/nomad",
       "logging": {
         "level": "debug",
         "fmt": "json"
-      },
-      "index": {
-        "from": "13983724",
-        "chunk": "2000"
       },
       "updater": {
         "enabled": true,
@@ -186,20 +188,15 @@
       },
       "kathy": {
         "enabled": false,
-        "signers": {},
         "interval": 100
       }
     },
     "moonbeam": {
       "rpcStyle": "ethereum",
-      "db": "/path/to/db",
+      "db": "/usr/share/nomad",
       "logging": {
         "level": "debug",
         "fmt": "json"
-      },
-      "index": {
-        "from": 171256,
-        "chunk": 2000
       },
       "updater": {
         "enabled": true,
@@ -219,7 +216,6 @@
       },
       "kathy": {
         "enabled": false,
-        "signers": {},
         "interval": 100
       }
     }

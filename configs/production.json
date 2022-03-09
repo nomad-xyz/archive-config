@@ -1,6 +1,6 @@
 {
   "version": 0,
-  "environment": "mainnet",
+  "environment": "production",
   "networks": ["ethereum", "moonbeam", "milkomedaC1"],
   "rpcs": {
     "moonbeam": ["https://moonriver.api.onfinality.io/public"],
@@ -264,7 +264,7 @@
     },
     "moonbeam": {
       "rpcStyle": "ethereum",
-      "db": "/path/to/db",
+      "db": "/usr/share/nomad",
       "logging": {
         "level": "debug",
         "fmt": "json"
@@ -292,7 +292,7 @@
     },
     "milkomedaC1": {
       "rpcStyle": "ethereum",
-      "db": "/path/to/db",
+      "db": "/usr/share/nomad",
       "logging": {
         "level": "debug",
         "fmt": "json"

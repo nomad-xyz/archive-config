@@ -4,15 +4,12 @@
   "networks": [
     "rinkeby",
     "kovan",
-    "moonbasealpha",
-    "milkomedatestnet",
-    "evmostestnet"
+    "moonbasealpha"
   ],
   "rpcs": {
     "rinkeby": [],
     "kovan": [],
-    "milkomedaC1testnet": ["http://use-util.cloud.milkomeda.com:8545"],
-    "evmostestnet": ["https://evmos-archive-testnet.api.bdnodes.net:8545"]
+    "moonbasealpha": []
   },
   "protocol": {
     "governor": {
@@ -25,9 +22,7 @@
         "domain": 2000,
         "connections": [
           "kovan",
-          "moonbasealpha",
-          "milkomedatestnet",
-          "evmostestnet"
+          "moonbasealpha"
         ],
         "specs": {
           "chainId": 4,
@@ -338,35 +333,6 @@
       }
     },
     "milkomedaC1testnet": {
-      "rpcStyle": "ethereum",
-      "db": "/usr/share/nomad",
-      "logging": {
-        "level": "debug",
-        "fmt": "json"
-      },
-      "updater": {
-        "enabled": true,
-        "interval": 5
-      },
-      "relayer": {
-        "enabled": true,
-        "interval": 10
-      },
-      "processor": {
-        "enabled": true,
-        "indexOnly": false,
-        "interval": 5
-      },
-      "watcher": {
-        "enabled": true,
-        "interval": 10
-      },
-      "kathy": {
-        "enabled": false,
-        "interval": 500
-      }
-    },
-    "evmostestnet": {
       "rpcStyle": "ethereum",
       "db": "/usr/share/nomad",
       "logging": {

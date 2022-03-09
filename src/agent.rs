@@ -74,18 +74,6 @@ pub struct LogConfig {
     pub level: LogLevel,
 }
 
-/// Indexer configuration
-#[derive(Default, Debug, Copy, Clone, serde::Serialize, serde::Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct IndexConfig {
-    /// from height
-    #[serde(deserialize_with = "deser_nomad_number")]
-    pub from: u64,
-    /// pagination size
-    #[serde(deserialize_with = "deser_nomad_number")]
-    pub chunk: u64,
-}
-
 /// Individual agent configuration
 #[derive(Default, Debug, Copy, Clone, serde::Serialize, serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -107,8 +95,6 @@ pub struct AgentConfig {
     pub db: PathBuf,
     /// Logging configuration
     pub logging: LogConfig,
-    /// Indexer configuration
-    pub index: IndexConfig,
     /// Updater configuration
     pub updater: BaseAgentConfig,
     /// Relayer configuration
