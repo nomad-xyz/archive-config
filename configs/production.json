@@ -23,6 +23,7 @@
           "finalizationBlocks": 20,
           "supports1559": true,
           "confirmations": 3,
+          "blockExplorer": "https://etherscan.io",
           "indexPageSize": 2000
         },
         "configuration": {
@@ -52,6 +53,7 @@
           "blockTime": 15,
           "supports1559": true,
           "confirmations": 3,
+          "blockExplorer": "https://moonbeam.moonscan.io",
           "indexPageSize": 2000
         },
         "configuration": {
@@ -77,6 +79,7 @@
           "blockTime": 4,
           "supports1559": true,
           "confirmations": 2,
+          "blockExplorer": "https://rpc.c1.milkomeda.com:4000/",
           "indexPageSize": 2000
         },
         "configuration": {
@@ -318,5 +321,6 @@
         "interval": 100
       }
     }
-  }
+  },
+  "bridgeGui": {}
 }

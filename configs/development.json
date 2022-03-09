@@ -35,6 +35,7 @@
           "finalizationBlocks": 10,
           "supports1559": true,
           "confirmations": 2,
+          "blockExplorer": "https://rinkeby.etherscan.io/",
           "indexPageSize": 2000
         },
         "configuration": {
@@ -64,6 +65,7 @@
           "finalizationBlocks": 5,
           "supports1559": false,
           "confirmations": 2,
+          "blockExplorer": "https://kovan.etherscan.io/",
           "indexPageSize": 2000
         },
         "configuration": {
@@ -93,6 +95,7 @@
           "finalizationBlocks": 20,
           "supports1559": true,
           "confirmations": 3,
+          "blockExplorer": "https://moonbase-blockscout.testnet.moonbeam.network/",
           "indexPageSize": 2000
         },
         "configuration": {
@@ -122,6 +125,7 @@
           "finalizationBlocks": 20,
           "supports1559": true,
           "confirmations": 3,
+          "blockExplorer": "https://explorer-devnet-cardano-evm.c1.milkomeda.com",
           "indexPageSize": 2000
         },
         "configuration": {
@@ -151,6 +155,7 @@
           "finalizationBlocks": 20,
           "supports1559": true,
           "confirmations": 3,
+          "blockExplorer": "http://TODO",
           "indexPageSize": 2000
         },
         "configuration": {
@@ -546,5 +551,6 @@
         "interval": 100
       }
     }
-  }
+  },
+  "bridgeGui": {}
 }
