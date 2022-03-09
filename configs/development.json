@@ -35,7 +35,6 @@
           "finalizationBlocks": 10,
           "supports1559": true,
           "confirmations": 2,
-          "deployHeight": 10024912,
           "indexPageSize": 2000
         },
         "configuration": {
@@ -65,7 +64,6 @@
           "finalizationBlocks": 5,
           "supports1559": false,
           "confirmations": 2,
-          "deployHeight": 29367895,
           "indexPageSize": 2000
         },
         "configuration": {
@@ -95,7 +93,6 @@
           "finalizationBlocks": 20,
           "supports1559": true,
           "confirmations": 3,
-          "deployHeight": 1555095,
           "indexPageSize": 2000
         },
         "configuration": {
@@ -125,7 +122,6 @@
           "finalizationBlocks": 20,
           "supports1559": true,
           "confirmations": 3,
-          "deployHeight": 1771254,
           "indexPageSize": 2000
         },
         "configuration": {
@@ -155,7 +151,6 @@
           "finalizationBlocks": 20,
           "supports1559": true,
           "confirmations": 3,
-          "deployHeight": 42494,
           "indexPageSize": 2000
         },
         "configuration": {
@@ -179,6 +174,7 @@
   },
   "core": {
     "rinkeby": {
+      "deployHeight": 10024912,
       "upgradeBeaconController": "0xAF32dF89A761e42Fe9eC9507fBf3C4B29a6c266f",
       "xAppConnectionManager": "0x7e365A910383cE8Dfa6860B080a9D4cd58d2BD13",
       "updaterManager": "0xA839c6221F93a5Fc141CBB6eCe98049B4dA7Df8d",
@@ -216,6 +212,7 @@
       }
     },
     "kovan": {
+      "deployHeight": 29367895,
       "upgradeBeaconController": "0xf211E0C9BA161880c77cf320200F14f67B0Db757",
       "xAppConnectionManager": "0xE469D8587D45BF85297BD924b159E726E7CA5408",
       "updaterManager": "0xf7531cCAe62Baa4db849d5A924873508E8f07084",
@@ -238,6 +235,7 @@
       }
     },
     "moonbasealpha": {
+      "deployHeight": 1555095,
       "upgradeBeaconController": "0x8205b57332fB1d332BFbCAFF6F386c77AA97fC96",
       "xAppConnectionManager": "0xD99E2c5eD0AacE4c459A850bd2DE0b1c0De12bfD",
       "updaterManager": "0xF53526c7DC4276c9311Ea89aF79E45d91cFcaFe1",
@@ -260,6 +258,7 @@
       }
     },
     "milkomedaC1testnet": {
+      "deployHeight": 1771254,
       "upgradeBeaconController": "0x7A9CA7500C8D6f66FACD373f64F65fC8E9e11742",
       "xAppConnectionManager": "0xf116142af150F8E2b939C14f746a67Ed6788266C",
       "updaterManager": "0xd685f14522Ea053A6aC7CcDEB2c1CD1E54714dA6",
@@ -306,6 +305,7 @@
   },
   "bridge": {
     "rinkeby": {
+      "deployHeight": 10024912,
       "bridgeRouter": {
         "implementation": "0x0754Db4C98F4B28c48228103d9770f1940079934",
         "proxy": "0xeACafFb9fBCe3d4c4C5D07AF5DFa51CcF5a348b7",
@@ -324,6 +324,7 @@
       "ethHelper": "0x074cd4d8629445Fda3b17574FCB848eda767058b"
     },
     "kovan": {
+      "deployHeight": 29367895,
       "bridgeRouter": {
         "implementation": "0x01652e694BbD82C0900776c0406C3DFaa00e1e91",
         "proxy": "0xa50E2db92c48f1c20C42338e6091E6B73da376a4",
@@ -342,6 +343,7 @@
       "ethHelper": "0xEFf85cD6763fEc984470bB1F433777d73aF1298B"
     },
     "moonbasealpha": {
+      "deployHeight": 1555095,
       "bridgeRouter": {
         "implementation": "0x87CCF662058697873F6801e40223a6f405587ab5",
         "proxy": "0x07235F5AE672B80649D79ebceBe749Ba4E520754",
@@ -360,6 +362,7 @@
       "ethHelper": "0x71a0CAfbc6bd7F16188B141850d9Bdce47981B1c"
     },
     "milkomedaC1testnet": {
+      "deployHeight": 1771254,
       "bridgeRouter": {
         "implementation": "0xd7A0Ef9172f313CE07a6A5753B39E28dcDa470DE",
         "proxy": "0x4C2e47cA4Dd7b93A62730e463BE43A0EA01c5A10",
@@ -378,6 +381,7 @@
       "ethHelper": "0x3Ec2235bFdBcA03C3709c97D23f9d72c75F8A7Dd"
     },
     "evmostestnet": {
+      "deployHeight": 42494,
       "bridgeRouter": {
         "implementation": "0xc58557F147785096330Bb05e2295FcA858C53663",
         "proxy": "0xA77aF25f6a7f3D043394DFA96ac93565bE0CBe2d",
@@ -414,6 +418,7 @@
       },
       "processor": {
         "enabled": true,
+        "indexOnly": false,
         "interval": 5
       },
       "watcher": {
@@ -537,7 +542,7 @@
         "interval": 10
       },
       "kathy": {
-        "enabled": false,
+        "enabled": true,
         "interval": 100
       }
     }
