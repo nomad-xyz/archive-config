@@ -11,8 +11,8 @@
   "rpcs": {
     "rinkeby": [],
     "kovan": [],
-    "milkomedatestnet": [],
-    "evmostestnet": []
+    "milkomedaC1testnet": ["http://use-util.cloud.milkomeda.com:8545"],
+    "evmostestnet": ["https://evmos-archive-testnet.api.bdnodes.net:8545"]
   },
   "protocol": {
     "governor": {
@@ -34,7 +34,8 @@
           "blockTime": 15,
           "finalizationBlocks": 10,
           "supports1559": true,
-          "confirmations": 2
+          "confirmations": 2,
+          "indexPageSize": 2000
         },
         "configuration": {
           "optimisticSeconds": 1800,
@@ -49,7 +50,7 @@
           "watchers": ["0x37B1E57b43e755dA8384D05cf437D88D0274Bfbd"]
         },
         "bridgeConfiguration": {
-          "weth": "",
+          "weth": "0xc778417E063141139Fce010982780140Aa0cD5Ab",
           "customs": []
         }
       },
@@ -62,7 +63,8 @@
           "blockTime": 4,
           "finalizationBlocks": 5,
           "supports1559": false,
-          "confirmations": 2
+          "confirmations": 2,
+          "indexPageSize": 2000
         },
         "configuration": {
           "optimisticSeconds": 1800,
@@ -77,7 +79,7 @@
           "watchers": ["0xa031973b293B924f6C848202Bf1dc3107fDE4D1e"]
         },
         "bridgeConfiguration": {
-          "weth": "",
+          "weth": "0xd0a1e359811322d97991e03f863a0c30c2cf029c",
           "customs": []
         }
       },
@@ -90,7 +92,8 @@
           "blockTime": 17,
           "finalizationBlocks": 20,
           "supports1559": true,
-          "confirmations": 3
+          "confirmations": 3,
+          "indexPageSize": 500
         },
         "configuration": {
           "optimisticSeconds": 1800,
@@ -105,7 +108,7 @@
           "watchers": ["0x1795f9A0a6853D6328241e9Dc37203cA545C3b79"]
         },
         "bridgeConfiguration": {
-          "weth": "",
+          "weth": "0x674421e9567653ee76e96feea3b2b2966d000dbd",
           "customs": []
         }
       }
@@ -113,6 +116,7 @@
   },
   "core": {
     "rinkeby": {
+      "deployHeight": 29371335,
       "upgradeBeaconController": "0xc87243FC20ba9CcbaeaF223C193d5AB056113609",
       "xAppConnectionManager": "0xB72E8910e67B5743E9255F1BEa2F9e0EADbB4E65",
       "updaterManager": "0xe12f91d610e880292200c49870f4b80B32236fBd",
@@ -140,6 +144,7 @@
       }
     },
     "kovan": {
+      "deployHeight": 29371350,
       "upgradeBeaconController": "0xC76f53cD2C7Ac383e564FbB3790Df1702B21A574",
       "xAppConnectionManager": "0xFA148438B26D36bcE290a45e12AA00Bdf0B9ca2e",
       "updaterManager": "0x2B2a2f5EE2B46822DA28407F8c95aec8B0ceD7BF",
@@ -162,6 +167,7 @@
       }
     },
     "moonbasealpha": {
+      "deployHeight": 1556676,
       "upgradeBeaconController": "0x272E4af5d4A496ff74615fd4f87104a6E202A365",
       "xAppConnectionManager": "0x166b6a590A2eBEb71C3BDc74762C03a1276BBA0C",
       "updaterManager": "0x15FD033C7Bb9eAf0961f351193BFD47f851ee414",
@@ -186,6 +192,7 @@
   },
   "bridge": {
     "rinkeby": {
+      "deployHeight": 29371335,
       "bridgeRouter": {
         "implementation": "0x48c165f72a42ff3fe7E78c7E93a3145202CE0CC0",
         "proxy": "0xA51a5c634309524899160327168d7f5e41988Df1",
@@ -204,6 +211,7 @@
       "ethHelper": "0x3B810a4545E4E71b1126dF389482eb37C0aE8815"
     },
     "kovan": {
+      "deployHeight": 29371350,
       "bridgeRouter": {
         "implementation": "0x8423980e7A20cB370b3406aBB649c0F9123F8056",
         "proxy": "0xe2364b8B5BE2BE6B32B5BA77e29F4c22944E3ce8",
@@ -222,6 +230,7 @@
       "ethHelper": "0x8679A6f835b4Bd647035d623571894665099ac36"
     },
     "moonbasealpha": {
+      "deployHeight": 1556676,
       "bridgeRouter": {
         "implementation": "0x91c798958E77CCC1D5e95F88251FD3729961AC27",
         "proxy": "0x65A779c45334B09DE19Ccd0b5AE508Eb4D56EB4d",
@@ -239,76 +248,152 @@
       },
       "ethHelper": "0x53976bBAf52e7B6770BfF6a24d26d3E4cac3DA59"
     }
+  },
+  "agent": {
+    "rinkeby": {
+      "rpcStyle": "ethereum",
+      "db": "/usr/share/nomad",
+      "logging": {
+        "level": "debug",
+        "fmt": "json"
+      },
+      "updater": {
+        "enabled": true,
+        "interval": 5
+      },
+      "relayer": {
+        "enabled": true,
+        "interval": 10
+      },
+      "processor": {
+        "enabled": true,
+        "indexOnly": false,
+        "interval": 5
+      },
+      "watcher": {
+        "enabled": true,
+        "interval": 10
+      },
+      "kathy": {
+        "enabled": false,
+        "interval": 500
+      }
+    },
+    "kovan": {
+      "rpcStyle": "ethereum",
+      "db": "/usr/share/nomad",
+      "logging": {
+        "level": "debug",
+        "fmt": "json"
+      },
+      "updater": {
+        "enabled": true,
+        "interval": 5
+      },
+      "relayer": {
+        "enabled": true,
+        "interval": 10
+      },
+      "processor": {
+        "enabled": true,
+        "indexOnly": false,
+        "interval": 5
+      },
+      "watcher": {
+        "enabled": true,
+        "interval": 10
+      },
+      "kathy": {
+        "enabled": false,
+        "interval": 500
+      }
+    },
+    "moonbasealpha": {
+      "rpcStyle": "ethereum",
+      "db": "/usr/share/nomad",
+      "logging": {
+        "level": "debug",
+        "fmt": "json"
+      },
+      "updater": {
+        "enabled": true,
+        "interval": 5
+      },
+      "relayer": {
+        "enabled": true,
+        "interval": 10
+      },
+      "processor": {
+        "enabled": true,
+        "indexOnly": false,
+        "interval": 5
+      },
+      "watcher": {
+        "enabled": true,
+        "interval": 10
+      },
+      "kathy": {
+        "enabled": false,
+        "interval": 500
+      }
+    },
+    "milkomedaC1testnet": {
+      "rpcStyle": "ethereum",
+      "db": "/usr/share/nomad",
+      "logging": {
+        "level": "debug",
+        "fmt": "json"
+      },
+      "updater": {
+        "enabled": true,
+        "interval": 5
+      },
+      "relayer": {
+        "enabled": true,
+        "interval": 10
+      },
+      "processor": {
+        "enabled": true,
+        "indexOnly": false,
+        "interval": 5
+      },
+      "watcher": {
+        "enabled": true,
+        "interval": 10
+      },
+      "kathy": {
+        "enabled": false,
+        "interval": 500
+      }
+    },
+    "evmostestnet": {
+      "rpcStyle": "ethereum",
+      "db": "/usr/share/nomad",
+      "logging": {
+        "level": "debug",
+        "fmt": "json"
+      },
+      "updater": {
+        "enabled": true,
+        "interval": 5
+      },
+      "relayer": {
+        "enabled": true,
+        "interval": 10
+      },
+      "processor": {
+        "enabled": true,
+        "indexOnly": false,
+        "interval": 5
+      },
+      "watcher": {
+        "enabled": true,
+        "interval": 10
+      },
+      "kathy": {
+        "enabled": false,
+        "interval": 500
+      }
+    }
   }
-  // "agent": {
-  //   "rinkeby": {
-  //     "rpcStyle": "ethereum",
-  //     "db": "/path/to/db",
-  //     "logging": {
-  //       "level": "debug",
-  //       "fmt": "json"
-  //     },
-  //     "index": {
-  //       "from": "13983724",
-  //       "chunk": "2000"
-  //     },
-  //     "updater": {
-  //       "enabled": true,
-  //       "interval": 5
-  //     },
-  //     "relayer": {
-  //       "enabled": true,
-  //       "interval": 10
-  //     },
-  //     "processor": {
-  //       "enabled": true,
-  //       "interval": 5
-  //     },
-  //     "watcher": {
-  //       "enabled": true,
-  //       "interval": 10
-  //     },
-  //     "kathy": {
-  //       "enabled": false,
-  //       "signers": {},
-  //       "interval": 100
-  //     }
-  //   },
-  //   "kovan": {
-  //     "rpcStyle": "ethereum",
-  //     "db": "/path/to/db",
-  //     "logging": {
-  //       "level": "debug",
-  //       "fmt": "json"
-  //     },
-  //     "index": {
-  //       "from": 171256,
-  //       "chunk": 2000
-  //     },
-  //     "updater": {
-  //       "enabled": true,
-  //       "interval": 5
-  //     },
-  //     "relayer": {
-  //       "enabled": true,
-  //       "interval": 10
-  //     },
-  //     "processor": {
-  //       "enabled": true,
-  //       "interval": 5
-  //     },
-  //     "watcher": {
-  //       "enabled": true,
-  //       "interval": 10
-  //     },
-  //     "kathy": {
-  //       "enabled": false,
-  //       "signers": {},
-  //       "interval": 100
-  //     }
-  //   },
-  //   "moonbasealpha": {
-  //
-  //   },
-  // }
 }
