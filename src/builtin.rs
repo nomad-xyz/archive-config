@@ -18,36 +18,31 @@ static PRODUCTION_JSON: &str = include_str!(concat!(
     env!("CARGO_MANIFEST_DIR"),
     "/configs/production.json"
 ));
-static BUILTINS: OnceCell<HashMap<&'static str, NomadConfig>> = OnceCell::new();
+static BUILTINS: OnceCell<HashMap<&'static str, OnceCell<NomadConfig>>> = OnceCell::new();
+
+fn deser(name: &str, json: &str) -> NomadConfig {
+    serde_json::from_str(json).expect(&format!("Configuration {}.json is malformed", name))
+}
 
 /// Get a built-in config object
-pub fn get_builtin(name: &str) -> Option<NomadConfig> {
-    BUILTINS
-        .get_or_init(|| {
-            let mut map: HashMap<_, _> = Default::default();
-            map.insert(
-                "test",
-                serde_json::from_str(TEST_JSON).expect("Configuration test.json is malformed"),
-            );
-            map.insert(
-                "development",
-                serde_json::from_str(DEVELOPMENT_JSON)
-                    .expect("Configuration development.json is malformed"),
-            );
-            map.insert(
-                "staging",
-                serde_json::from_str(STAGING_JSON)
-                    .expect("Configuration staging.json is malformed"),
-            );
-            map.insert(
-                "production",
-                serde_json::from_str(PRODUCTION_JSON)
-                    .expect("Configuration production.json is malformed"),
-            );
-            map
-        })
-        .get(name)
-        .cloned()
+pub fn get_builtin(name: &str) -> Option<&NomadConfig> {
+    let builtins = BUILTINS.get_or_init(|| {
+        let mut map: HashMap<_, _> = Default::default();
+
+        map.insert("test", Default::default());
+        map.insert("development", Default::default());
+        map.insert("staging", Default::default());
+        map.insert("production", Default::default());
+        map
+    });
+
+    Some(builtins.get(name)?.get_or_init(|| match name {
+        "test" => deser("test", TEST_JSON),
+        "development" => deser("development", DEVELOPMENT_JSON),
+        "staging" => deser("staging", STAGING_JSON),
+        "production" => deser("production", PRODUCTION_JSON),
+        _ => panic!("unknown builtin {}", name),
+    }))
 }
 
 #[cfg(test)]
