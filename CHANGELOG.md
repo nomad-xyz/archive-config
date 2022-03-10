@@ -2,6 +2,8 @@
 
 ### Unreleased
 
+### v0.1.0-rc.1
+
 - add config for `development`
 - add config for `staging`
 - add config for `production`

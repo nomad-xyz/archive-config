@@ -55,7 +55,8 @@ fn format_errs(e: impl std::fmt::Display) -> wasm_bindgen::prelude::JsValue {
 pub fn get_builtin(name: &str) -> JsResult<NomadConfig> {
     ret_config!(crate::builtin::get_builtin(name)
         .ok_or_else(|| eyre::eyre!("No builtin config found for environment named {}", name))
-        .map_err(format_errs)?)
+        .map_err(format_errs)?
+        .clone())
 }
 
 /// Syntactically validate a config. Throw an error if invalid
