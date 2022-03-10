@@ -21,7 +21,8 @@ static PRODUCTION_JSON: &str = include_str!(concat!(
 static BUILTINS: OnceCell<HashMap<&'static str, OnceCell<NomadConfig>>> = OnceCell::new();
 
 fn deser(name: &str, json: &str) -> NomadConfig {
-    serde_json::from_str(json).expect(&format!("Configuration {}.json is malformed", name))
+    serde_json::from_str(json)
+        .unwrap_or_else(|_| panic!("Configuration {}.json is malformed", name))
 }
 
 /// Get a built-in config object
