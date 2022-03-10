@@ -130,7 +130,7 @@ export interface NetworkInfo {
 }
 
 export interface NomadConfig {
-  enviroment: string;
+  environment: string;
   networks: Array<string>;
   rpcs: Record<string, Array<string>>;
   protocol: NetworkInfo;
