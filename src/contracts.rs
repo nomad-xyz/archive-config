@@ -4,10 +4,15 @@ use std::collections::HashMap;
 
 use crate::common::{NomadIdentifier, Proxy};
 
+use crate::common::deser_nomad_number;
+
 /// Evm Core Contracts
 #[derive(Default, Debug, Clone, serde::Serialize, serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct EvmCoreContracts {
+    /// Contract Deploy Height
+    #[serde(default, deserialize_with = "deser_nomad_number")]
+    pub deploy_height: u64,
     /// UBC address
     pub upgrade_beacon_controller: NomadIdentifier,
     /// XApp Connection Manager address

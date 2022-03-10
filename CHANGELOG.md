@@ -2,6 +2,14 @@
 
 ### Unreleased
 
+- add config for `development`
+- add config for `staging`
+- add config for `production`
+- refactor builtins for better amortization
+- move indexing `from` option to contract block `deployHeight`
+- move indexing `chunk` option to network block `indexPageSize`
+- rename testnet `milkomedatestnet` -> `milkomedaC1testnet`
+
 ### v0.1.0-beta.14
 
 - fix: correct import in wasm bindings
