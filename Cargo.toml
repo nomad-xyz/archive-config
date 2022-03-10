@@ -1,5 +1,5 @@
 [package]
-name = "config"
+name = "nomad-xyz-configuration"
 version = "0.1.0-rc.1"
 edition = "2021"
 authors = ["James Prestwich <james@nomad.xyz>", "The Nomad Developers <team@nomad.xyz>"]
