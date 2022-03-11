@@ -16,6 +16,22 @@ functions that perform consistency-critical operations like `addNetwork` and
 `addCore`. We strongly recommend using these instead of assigning to the
 relevant sections.
 
+### Usage 
+
+#### Typescript 
+
+```typescript
+import * as configuration from "@nomad-xyz/configuration"
+
+const config = configuration.getBuiltin("production")
+
+console.log(`Environment: ${config.environment}`)
+```
+
+#### Rust 
+
+// TODO 
+
 ### Building
 
 - `$ cargo build`
