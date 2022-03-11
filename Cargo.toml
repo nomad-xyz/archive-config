@@ -6,6 +6,10 @@ authors = ["James Prestwich <james@nomad.xyz>", "The Nomad Developers <team@noma
 description = "Nomad project configuration file utilities"
 repository = "https://github.com/nomad-xyz/configuration"
 license = "MIT OR Apache-2.0"
+exclude = [
+    "*.sh",
+    ".git*"
+]
 
 [lib]
 crate-type = ["cdylib", "rlib"]
@@ -17,7 +21,7 @@ eyre = "0.6.6"
 
 [dependencies]
 affix = "0.1.2"
-ethers = { git = "https://github.com/gakonst/ethers-rs", branch = "master" }
+ethers = "0.6.2"
 eyre = "0.6.6"
 once_cell = "1.9.0"
 serde = "1.0.136"
