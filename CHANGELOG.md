@@ -2,6 +2,12 @@
 
 ### Unreleased
 
+### v0.1.0-rc.2
+
+- add `mintGas` to `BridgeConfiguration`
+- add `deployGas` to `BridgeConfiguration`
+- `customs` in `BridgeConfiguration` is now optional
+
 ### v0.1.0-rc.1
 
 - add config for `development`

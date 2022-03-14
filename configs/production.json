@@ -40,7 +40,9 @@
         },
         "bridgeConfiguration": {
           "weth": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-          "customs": []
+          "customs": [],
+          "mintGas": 200000,
+          "deployGas": 850000
         }
       },
       "moonbeam": {
@@ -67,6 +69,11 @@
           },
           "updater": "0x40FD91557B318BD5d52D12535795265c88702681",
           "watchers": ["0x297BBC2F2EAAEB17Ee53F514020bC8173F0570dC"]
+        },
+        "bridgeConfiguration": {
+          "customs": [],
+          "mintGas": 200000,
+          "deployGas": 850000
         }
       },
       "milkomedaC1": {
@@ -96,7 +103,9 @@
         },
         "bridgeConfiguration": {
           "weth": "0xAE83571000aF4499798d1e3b0fA0070EB3A3E3F9",
-          "customs": []
+          "customs": [],
+          "mintGas": 200000,
+          "deployGas": 850000
         }
       }
     }

@@ -5,6 +5,7 @@ use std::collections::HashSet;
 use crate::common::{NomadIdentifier, NomadLocator, Proxy};
 
 use crate::common::deser_nomad_number;
+use crate::network::CustomTokenSpecifier;
 
 /// Deploy-time custom tokens
 #[derive(Default, Debug, Clone, serde::Serialize, serde::Deserialize, Eq, PartialEq, Hash)]
@@ -66,4 +67,22 @@ impl Default for BridgeContracts {
 pub struct AppConfig {
     display_name: String,
     native_token_symbol: String,
+}
+
+/// Configuration for bridge contracts
+#[derive(Default, Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct BridgeConfiguration {
+    /// Location of WETH if any
+    pub weth: Option<NomadIdentifier>,
+    /// Custom token deployment specifiers
+    pub customs: Option<HashSet<CustomTokenSpecifier>>,
+    /// Amount of gas required to execute a `Transfer` message that DOST NOT
+    /// cause contract deployment
+    #[serde(default, deserialize_with = "deser_nomad_number")]
+    pub mint_gas: u64,
+    /// Amount of gas required to execute a `Transfer` message that DOES cause
+    /// contract deployment
+    #[serde(default, deserialize_with = "deser_nomad_number")]
+    pub deploy_gas: u64,
 }

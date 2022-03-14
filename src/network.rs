@@ -2,7 +2,10 @@
 
 use std::collections::{HashMap, HashSet};
 
-use crate::common::{deser_nomad_number, NameOrDomain, NomadIdentifier, NomadLocator};
+use crate::{
+    bridge::BridgeConfiguration,
+    common::{deser_nomad_number, NameOrDomain, NomadIdentifier, NomadLocator},
+};
 
 /// Governance details
 #[derive(
@@ -81,16 +84,6 @@ pub struct CustomTokenSpecifier {
     pub decimals: u8,
 }
 
-/// Configuration for bridge contracts
-#[derive(Default, Debug, Clone, serde::Serialize, serde::Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct BridgeConfiguration {
-    /// Location of WETH if any
-    pub weth: Option<NomadIdentifier>,
-    /// Custom token deployment specifiers
-    pub customs: HashSet<CustomTokenSpecifier>,
-}
-
 /// Core network information
 #[derive(Default, Debug, Clone, serde::Serialize, serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -106,7 +99,6 @@ pub struct Domain {
     pub configuration: ContractConfig,
     /// Network specifications
     pub specs: NetworkSpecs,
-    #[serde(default)]
     /// Bridge contract configuration options
     pub bridge_configuration: BridgeConfiguration,
 }

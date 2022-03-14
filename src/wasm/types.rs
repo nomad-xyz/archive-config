@@ -46,7 +46,7 @@ export interface Proxy {
 }
 
 export interface EvmCoreContracts {
-  deployHeight: number,
+  deployHeight: number;
   upgradeBeaconController: NomadIdentifier;
   xAppConnectionManager: NomadIdentifier;
   updaterManager: NomadIdentifier;
@@ -67,7 +67,7 @@ export interface DeployedCustomToken {
 }
 
 export interface EvmBridgeContracts {
-  deployHeight: number,
+  deployHeight: number;
   bridgeRouter: Proxy;
   tokenRegistry: Proxy;
   bridgeToken: Proxy;
@@ -113,6 +113,8 @@ export interface CustomTokenSpecifier {
 export interface BridgeConfiguration {
   weth?: NomadIdentifier;
   customs: Array<CustomTokenSpecifier>;
+  mintGas: number | string;
+  deployGas: number | string;
 }
 
 export interface Domain {

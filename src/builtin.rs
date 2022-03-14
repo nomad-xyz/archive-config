@@ -2,6 +2,7 @@
 
 use std::collections::HashMap;
 
+use eyre::Context;
 use once_cell::sync::OnceCell;
 
 use crate::NomadConfig;
@@ -22,7 +23,8 @@ static BUILTINS: OnceCell<HashMap<&'static str, OnceCell<NomadConfig>>> = OnceCe
 
 fn deser(name: &str, json: &str) -> NomadConfig {
     serde_json::from_str(json)
-        .unwrap_or_else(|_| panic!("Configuration {}.json is malformed", name))
+        .wrap_err_with(|| format!("Configuration {}.json is malformed", name))
+        .unwrap()
 }
 
 /// Get a built-in config object
