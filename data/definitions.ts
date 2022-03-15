@@ -106,7 +106,7 @@ export interface CustomTokenSpecifier {
 
 export interface BridgeConfiguration {
   weth?: NomadIdentifier;
-  customs: Array<CustomTokenSpecifier>;
+  customs?: Array<CustomTokenSpecifier>;
   mintGas: number | string;
   deployGas: number | string;
 }

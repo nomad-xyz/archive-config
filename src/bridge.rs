@@ -39,11 +39,11 @@ pub struct EvmBridgeContracts {
     /// Bridge Token proxy
     pub bridge_token: Proxy,
     /// Eth Helper address
-    #[serde(default)]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
     pub eth_helper: Option<NomadIdentifier>,
     /// Custom Tokens (if any)
-    #[serde(default)]
-    pub customs: HashSet<DeployedCustomToken>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub customs: Option<HashSet<DeployedCustomToken>>,
 }
 
 /// Bridge contract abstraction
@@ -73,9 +73,11 @@ pub struct AppConfig {
 #[derive(Default, Debug, Clone, serde::Serialize, serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct BridgeConfiguration {
+    #[serde(default, skip_serializing_if = "Option::is_none")]
     /// Location of WETH if any
     pub weth: Option<NomadIdentifier>,
     /// Custom token deployment specifiers
+    #[serde(default, skip_serializing_if = "Option::is_none")]
     pub customs: Option<HashSet<CustomTokenSpecifier>>,
     /// Amount of gas required to execute a `Transfer` message that DOST NOT
     /// cause contract deployment

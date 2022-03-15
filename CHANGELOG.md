@@ -2,6 +2,9 @@
 
 ### Unreleased
 
+- `customs` in `BridgeConfiguration` now properly optional in TS
+- Optional properties now skip serialization if they are none
+
 ### v0.1.0-rc.2
 
 - add `mintGas` to `BridgeConfiguration`
