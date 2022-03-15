@@ -24,6 +24,8 @@ pub struct EvmCoreContracts {
     /// Replica proxy details. Note these are the EVM replicas of remote domain.
     /// These are not the remote replicas of this domain
     pub replicas: HashMap<String, Proxy>,
+    /// Governance router proxy details
+    pub governance_router: Proxy,
 }
 
 /// Core Contract abstract
