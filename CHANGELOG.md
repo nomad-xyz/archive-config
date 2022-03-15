@@ -2,6 +2,8 @@
 
 ### Unreleased
 
+### v0.1.0-rc.3
+
 - `customs` in `BridgeConfiguration` now properly optional in TS
 - Optional properties now skip serialization if they are none
 - add `governance_router` to Rust `EvmCoreContracts` struct
