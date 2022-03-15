@@ -98,9 +98,9 @@
       },
       "replicas": {
         "moonbeam": {
-          "implementation": "0x67833a48b3F509d4252ac2c19cd604556eD6c981",
-          "proxy": "0x7F58bb8311DB968AB110889F2Dfa04ab7E8E831B",
-          "beacon": "0x3009C99D370B780304D2098196f1EBF779a4777a"
+          "implementation": "0x7F58bb8311DB968AB110889F2Dfa04ab7E8E831B",
+          "proxy": "0x049b51e531Fd8f90da6d92EA83dC4125002F20EF",
+          "beacon": "0x0876dFe4AcAe0e1c0a43302716483f5752298b71"
         }
       }
     },
@@ -121,9 +121,9 @@
       },
       "replicas": {
         "ethereum": {
-          "implementation": "0x7F58bb8311DB968AB110889F2Dfa04ab7E8E831B",
-          "proxy": "0x049b51e531Fd8f90da6d92EA83dC4125002F20EF",
-          "beacon": "0x0876dFe4AcAe0e1c0a43302716483f5752298b71"
+          "implementation": "0x67833a48b3F509d4252ac2c19cd604556eD6c981",
+          "proxy": "0x7F58bb8311DB968AB110889F2Dfa04ab7E8E831B",
+          "beacon": "0x3009C99D370B780304D2098196f1EBF779a4777a"
         }
       }
     }

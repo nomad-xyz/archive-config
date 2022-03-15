@@ -9,8 +9,8 @@
     "evmostestnet"
   ],
   "rpcs": {
-    "rinkeby": [""],
-    "kovan": [""],
+    "rinkeby": ["https://rinkeby.infura.io/v3/"],
+    "kovan": ["https://kovan.infura.io/v3/"],
     "milkomedaC1testnet": ["http://use-util.cloud.milkomeda.com:8545"],
     "evmostestnet": ["https://evmos-archive-testnet.api.bdnodes.net:8545"]
   },
