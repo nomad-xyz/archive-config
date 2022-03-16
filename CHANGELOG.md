@@ -2,6 +2,8 @@
 
 ### Unreleased
 
+- fix: expose config version number in TS type
+
 ### v0.1.0-rc.3
 
 - `customs` in `BridgeConfiguration` now properly optional in TS

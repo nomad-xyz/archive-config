@@ -132,6 +132,7 @@ export interface NetworkInfo {
 }
 
 export interface NomadConfig {
+  version: number;
   environment: string;
   networks: Array<string>;
   rpcs: Record<string, Array<string>>;
