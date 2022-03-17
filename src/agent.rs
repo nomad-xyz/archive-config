@@ -11,6 +11,8 @@ pub struct AgentConfig {
     pub rpc_style: RpcStyles,
     /// Path to the DB
     pub db: PathBuf,
+    /// Metrics port
+    pub metrics: u16,
     /// Logging configuration
     pub logging: LogConfig,
     /// Updater configuration
