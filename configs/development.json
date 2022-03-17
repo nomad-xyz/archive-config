@@ -415,6 +415,7 @@
     "rinkeby": {
       "rpcStyle": "ethereum",
       "db": "/usr/share/nomad",
+      "metrics": 9090,
       "logging": {
         "level": "debug",
         "fmt": "json"
@@ -444,6 +445,7 @@
     "kovan": {
       "rpcStyle": "ethereum",
       "db": "/usr/share/nomad",
+      "metrics": 9090,
       "logging": {
         "level": "debug",
         "fmt": "json"
@@ -473,6 +475,7 @@
     "moonbasealpha": {
       "rpcStyle": "ethereum",
       "db": "/usr/share/nomad",
+      "metrics": 9090,
       "logging": {
         "level": "debug",
         "fmt": "json"
@@ -502,6 +505,7 @@
     "milkomedaC1testnet": {
       "rpcStyle": "ethereum",
       "db": "/usr/share/nomad",
+      "metrics": 9090,
       "logging": {
         "level": "debug",
         "fmt": "json"
@@ -531,6 +535,7 @@
     "evmostestnet": {
       "rpcStyle": "ethereum",
       "db": "/usr/share/nomad",
+      "metrics": 9090,
       "logging": {
         "level": "debug",
         "fmt": "json"

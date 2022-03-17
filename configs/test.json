@@ -172,6 +172,7 @@
     "ethereum": {
       "rpcStyle": "ethereum",
       "db": "/usr/share/nomad",
+      "metrics": 9090,
       "logging": {
         "level": "debug",
         "fmt": "json"
@@ -200,6 +201,7 @@
     "moonbeam": {
       "rpcStyle": "ethereum",
       "db": "/usr/share/nomad",
+      "metrics": 9090,
       "logging": {
         "level": "debug",
         "fmt": "json"
