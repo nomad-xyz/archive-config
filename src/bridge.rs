@@ -2,9 +2,9 @@
 
 use std::collections::HashSet;
 
-use crate::common::{NomadIdentifier, NomadLocator, Proxy};
+use nomad_types::deser_nomad_number;
+use nomad_types::{NomadIdentifier, NomadLocator, Proxy};
 
-use crate::common::deser_nomad_number;
 use crate::network::CustomTokenSpecifier;
 
 /// Deploy-time custom tokens

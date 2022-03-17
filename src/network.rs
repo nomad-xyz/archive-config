@@ -1,11 +1,8 @@
 //! Core deploy information
 
+use crate::bridge::BridgeConfiguration;
+use nomad_types::{deser_nomad_number, NameOrDomain, NomadIdentifier, NomadLocator};
 use std::collections::{HashMap, HashSet};
-
-use crate::{
-    bridge::BridgeConfiguration,
-    common::{deser_nomad_number, NameOrDomain, NomadIdentifier, NomadLocator},
-};
 
 /// Governance details
 #[derive(

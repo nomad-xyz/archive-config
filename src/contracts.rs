@@ -2,9 +2,8 @@
 
 use std::collections::HashMap;
 
-use crate::common::{NomadIdentifier, Proxy};
-
-use crate::common::deser_nomad_number;
+use nomad_types::deser_nomad_number;
+use nomad_types::{NomadIdentifier, Proxy};
 
 /// Evm Core Contracts
 #[derive(Default, Debug, Clone, serde::Serialize, serde::Deserialize)]
