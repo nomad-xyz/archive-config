@@ -62,10 +62,12 @@ macro_rules! decl_config {
             pub struct [<$name Config>] {
                 $(
                     $(#[$tags])*
-                    pub(crate) $prop: $type,
+                    pub $prop: $type,
                 )*
-                pub(crate) interval: u64,
-                pub(crate) enabled: bool,
+                /// Agent interval
+                pub interval: u64,
+                /// Whether or not agent is enabled
+                pub enabled: bool,
             }
         }
     }
