@@ -264,6 +264,7 @@
       },
       "processor": {
         "enabled": true,
+        "indexOnly": false,
         "interval": 5
       },
       "watcher": {
@@ -293,6 +294,7 @@
       },
       "processor": {
         "enabled": true,
+        "indexOnly": true,
         "interval": 5
       },
       "watcher": {
@@ -322,6 +324,7 @@
       },
       "processor": {
         "enabled": true,
+        "indexOnly": true,
         "interval": 5
       },
       "watcher": {

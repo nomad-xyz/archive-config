@@ -10,7 +10,6 @@ decl_config!(Processor {
     /// Deny list
     denied: Option<HashSet<H256>>,
     /// Index only mode
-    #[serde(default)]
     index_only: bool,
     /// S3 config
     s3: Option<S3Config>,

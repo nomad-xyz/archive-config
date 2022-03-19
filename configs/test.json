@@ -186,6 +186,7 @@
         "interval": 10
       },
       "processor": {
+        "indexOnly": false,
         "enabled": true,
         "interval": 5
       },
@@ -215,6 +216,7 @@
         "interval": 10
       },
       "processor": {
+        "indexOnly": true,
         "enabled": true,
         "interval": 5
       },
