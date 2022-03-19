@@ -30,7 +30,7 @@ pub struct AgentConfig {
     /// Path to the DB
     pub db: PathBuf,
     /// Metrics port
-    pub metrics: u16,
+    pub metrics: Option<u16>,
     /// Logging configuration
     pub logging: LogConfig,
     /// Updater configuration
