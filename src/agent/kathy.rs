@@ -10,7 +10,7 @@ decl_config!(Kathy {
 });
 
 /// Kathy chat generator configuration
-#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(Debug, Clone, serde::Serialize, serde::Deserialize, PartialEq)]
 #[serde(tag = "type", rename_all = "camelCase")]
 pub enum ChatGenConfig {
     /// Static messages

@@ -36,7 +36,7 @@ impl Default for LogStyle {
 }
 
 /// Logging level
-#[derive(Debug, Clone, Copy, serde::Serialize, serde::Deserialize)]
+#[derive(Debug, Clone, Copy, serde::Serialize, serde::Deserialize, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub enum LogLevel {
     /// Off
@@ -61,7 +61,7 @@ impl Default for LogLevel {
 }
 
 /// Logger configuration
-#[derive(Debug, Copy, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(Debug, Copy, Clone, serde::Serialize, serde::Deserialize, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct LogConfig {
     /// fmt specifier

@@ -16,7 +16,7 @@ decl_config!(Processor {
 });
 
 /// S3 Configuration
-#[derive(Debug, Default, serde::Serialize, serde::Deserialize, Clone)]
+#[derive(Debug, Default, Clone, serde::Serialize, serde::Deserialize, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct S3Config {
     /// Bucket
