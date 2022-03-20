@@ -171,7 +171,7 @@
   "agent": {
     "ethereum": {
       "rpcStyle": "ethereum",
-      "db": "/usr/share/nomad",
+      "db": "db_path",
       "metrics": 9090,
       "logging": {
         "level": "debug",
@@ -201,7 +201,7 @@
     },
     "moonbeam": {
       "rpcStyle": "ethereum",
-      "db": "/usr/share/nomad",
+      "db": "db_path",
       "metrics": 9090,
       "logging": {
         "level": "debug",

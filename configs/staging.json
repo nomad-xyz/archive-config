@@ -249,7 +249,7 @@
   "agent": {
     "rinkeby": {
       "rpcStyle": "ethereum",
-      "db": "/usr/share/nomad",
+      "db": "db_path",
       "metrics": 9090,
       "logging": {
         "level": "debug",
@@ -279,7 +279,7 @@
     },
     "kovan": {
       "rpcStyle": "ethereum",
-      "db": "/usr/share/nomad",
+      "db": "db_path",
       "metrics": 9090,
       "logging": {
         "level": "debug",
@@ -309,7 +309,7 @@
     },
     "moonbasealpha": {
       "rpcStyle": "ethereum",
-      "db": "/usr/share/nomad",
+      "db": "db_path",
       "metrics": 9090,
       "logging": {
         "level": "debug",
@@ -339,7 +339,7 @@
     },
     "milkomedaC1testnet": {
       "rpcStyle": "ethereum",
-      "db": "/usr/share/nomad",
+      "db": "db_path",
       "metrics": 9090,
       "logging": {
         "level": "debug",
