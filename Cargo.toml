@@ -28,7 +28,7 @@ serde = "1.0.136"
 serde_json = "1.0.78"
 serde_yaml = "0.8.23"
 paste = "1.0.5"
-nomad-types = {git = "https://github.com/nomad-xyz/rust", rev = "c366580"}
+nomad-types = {git = "https://github.com/nomad-xyz/rust", rev = "6f5f96b"}
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
 wee_alloc = "0.4.5"

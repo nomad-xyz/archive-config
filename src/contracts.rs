@@ -2,7 +2,7 @@
 
 use std::collections::HashMap;
 
-use nomad_types::deser_nomad_number;
+use nomad_types::deser_nomad_number_u32;
 use nomad_types::{NomadIdentifier, Proxy};
 
 /// Evm Core Contracts
@@ -10,8 +10,8 @@ use nomad_types::{NomadIdentifier, Proxy};
 #[serde(rename_all = "camelCase")]
 pub struct EvmCoreContracts {
     /// Contract Deploy Height
-    #[serde(default, deserialize_with = "deser_nomad_number")]
-    pub deploy_height: u64,
+    #[serde(default, deserialize_with = "deser_nomad_number_u32")]
+    pub deploy_height: u32,
     /// UBC address
     pub upgrade_beacon_controller: NomadIdentifier,
     /// XApp Connection Manager address
