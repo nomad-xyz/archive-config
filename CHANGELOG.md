@@ -3,6 +3,8 @@
 ### Unreleased
 
 - fix: expose config version number in TS type
+- fix: to allow TS deploys, bindings no longer perform config validation
+  on all operations
 
 ### v0.1.0-rc.3
 
