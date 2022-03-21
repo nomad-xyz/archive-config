@@ -414,7 +414,7 @@
   "agent": {
     "rinkeby": {
       "rpcStyle": "ethereum",
-      "db": "db_path",
+      "db": "db",
       "metrics": 9090,
       "logging": {
         "level": "debug",
@@ -444,7 +444,7 @@
     },
     "kovan": {
       "rpcStyle": "ethereum",
-      "db": "db_path",
+      "db": "db",
       "metrics": 9090,
       "logging": {
         "level": "debug",
@@ -474,7 +474,7 @@
     },
     "moonbasealpha": {
       "rpcStyle": "ethereum",
-      "db": "db_path",
+      "db": "db",
       "metrics": 9090,
       "logging": {
         "level": "debug",
@@ -504,7 +504,7 @@
     },
     "milkomedaC1testnet": {
       "rpcStyle": "ethereum",
-      "db": "db_path",
+      "db": "db",
       "metrics": 9090,
       "logging": {
         "level": "debug",
@@ -534,7 +534,7 @@
     },
     "evmostestnet": {
       "rpcStyle": "ethereum",
-      "db": "db_path",
+      "db": "db",
       "metrics": 9090,
       "logging": {
         "level": "debug",

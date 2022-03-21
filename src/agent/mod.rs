@@ -54,7 +54,7 @@ macro_rules! decl_config {
             $($(#[$tags:meta])* $prop:ident: $type:ty,)*
         }
     ) => {
-        paste::paste! {
+        affix::paste! {
             #[derive(Debug, Default, Clone, serde::Serialize, serde::Deserialize)]
             #[serde(rename_all = "camelCase")]
             #[doc = "Config for `" $name]
