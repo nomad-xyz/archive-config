@@ -2,8 +2,7 @@
 
 use crate::bridge::BridgeConfiguration;
 use nomad_types::{
-    deser_nomad_number_u32, deser_nomad_number_u64, deser_nomad_number_u8, NameOrDomain,
-    NomadIdentifier, NomadLocator,
+    deser_nomad_u32, deser_nomad_u64, deser_nomad_u8, NameOrDomain, NomadIdentifier, NomadLocator,
 };
 use std::collections::{HashMap, HashSet};
 
@@ -16,7 +15,7 @@ pub struct Governance {
     /// Address of the recovery manager on this domain
     pub recovery_manager: NomadIdentifier,
     /// Length of the recovery timelock (in seconds) on this domain
-    #[serde(deserialize_with = "deser_nomad_number_u64")]
+    #[serde(deserialize_with = "deser_nomad_u64")]
     pub recovery_timelock: u64,
 }
 
@@ -25,16 +24,16 @@ pub struct Governance {
 #[serde(rename_all = "camelCase")]
 pub struct ContractConfig {
     /// Optimsitic seconds for replicas to wait
-    #[serde(deserialize_with = "deser_nomad_number_u64")]
+    #[serde(deserialize_with = "deser_nomad_u64")]
     pub optimistic_seconds: u64,
     /// Default process gas
-    #[serde(deserialize_with = "deser_nomad_number_u64")]
+    #[serde(deserialize_with = "deser_nomad_u64")]
     pub process_gas: u64,
     /// Reserve gas
-    #[serde(deserialize_with = "deser_nomad_number_u64")]
+    #[serde(deserialize_with = "deser_nomad_u64")]
     pub reserve_gas: u64,
     /// Maximum preflight gas
-    #[serde(deserialize_with = "deser_nomad_number_u64")]
+    #[serde(deserialize_with = "deser_nomad_u64")]
     pub maximum_gas: u64,
     /// List of updaters for this network
     pub updater: NomadIdentifier,
@@ -49,24 +48,24 @@ pub struct ContractConfig {
 #[serde(rename_all = "camelCase")]
 pub struct NetworkSpecs {
     /// EVM chain id. 0 for non-EVM chains
-    #[serde(default, deserialize_with = "deser_nomad_number_u64")]
+    #[serde(default, deserialize_with = "deser_nomad_u64")]
     pub chain_id: u64,
     /// Block time on the network
-    #[serde(deserialize_with = "deser_nomad_number_u64")]
+    #[serde(deserialize_with = "deser_nomad_u64")]
     pub block_time: u64,
     /// Timelag for agents using the timelag provider
-    #[serde(deserialize_with = "deser_nomad_number_u8")]
+    #[serde(deserialize_with = "deser_nomad_u8")]
     pub finalization_blocks: u8,
     /// True if the networks supports 1559. Otherwise false
     #[serde(default)]
     pub supports_1559: bool,
     /// Desired number of confirmations on transactions
-    #[serde(deserialize_with = "deser_nomad_number_u64")]
+    #[serde(deserialize_with = "deser_nomad_u64")]
     pub confirmations: u64,
     /// Block explorer URL
     pub block_explorer: String,
     /// Number of blocks to include in a page while indexing
-    #[serde(deserialize_with = "deser_nomad_number_u32")]
+    #[serde(deserialize_with = "deser_nomad_u32")]
     pub index_page_size: u32,
 }
 
@@ -91,7 +90,7 @@ pub struct Domain {
     /// Network name
     pub name: String,
     /// Network domain identifier
-    #[serde(deserialize_with = "deser_nomad_number_u32")]
+    #[serde(deserialize_with = "deser_nomad_u32")]
     pub domain: u32,
     /// List of connections to other networks
     pub connections: HashSet<String>,
