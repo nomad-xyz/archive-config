@@ -4,11 +4,11 @@
 #![warn(missing_debug_implementations)]
 #![warn(missing_copy_implementations)]
 
+use nomad_types::{NameOrDomain, NomadIdentifier};
 use std::collections::{HashMap, HashSet};
 
 pub mod agent;
 pub mod bridge;
-pub mod common;
 pub mod contracts;
 pub mod network;
 
@@ -25,7 +25,6 @@ static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
 use agent::AgentConfig;
 use bridge::{AppConfig, BridgeContracts};
-use common::{NameOrDomain, NomadIdentifier};
 use contracts::CoreContracts;
 use network::{Domain, NetworkInfo};
 

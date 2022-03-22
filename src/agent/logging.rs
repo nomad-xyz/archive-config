@@ -1,8 +1,4 @@
-//! Agent configuration
-
-use std::path::PathBuf;
-
-use crate::common::deser_nomad_number;
+//! Agent configuration types
 
 /// Rpc Styles
 #[derive(Debug, Clone, Copy, serde::Serialize, serde::Deserialize, Eq, PartialEq)]
@@ -40,7 +36,7 @@ impl Default for LogStyle {
 }
 
 /// Logging level
-#[derive(Debug, Clone, Copy, serde::Serialize, serde::Deserialize)]
+#[derive(Debug, Clone, Copy, serde::Serialize, serde::Deserialize, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub enum LogLevel {
     /// Off
@@ -65,7 +61,7 @@ impl Default for LogLevel {
 }
 
 /// Logger configuration
-#[derive(Default, Debug, Copy, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(Debug, Copy, Clone, serde::Serialize, serde::Deserialize, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct LogConfig {
     /// fmt specifier
@@ -74,37 +70,13 @@ pub struct LogConfig {
     pub level: LogLevel,
 }
 
-/// Individual agent configuration
-#[derive(Default, Debug, Copy, Clone, serde::Serialize, serde::Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct BaseAgentConfig {
-    /// true if the agent should be run
-    pub enabled: bool,
-    /// the polling interval
-    #[serde(deserialize_with = "deser_nomad_number")]
-    pub interval: u64,
-}
-
-/// Full agent configuration
-#[derive(Default, Debug, Clone, serde::Serialize, serde::Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AgentConfig {
-    /// RPC specifier
-    pub rpc_style: RpcStyles,
-    /// Path to the DB
-    pub db: PathBuf,
-    /// Logging configuration
-    pub logging: LogConfig,
-    /// Updater configuration
-    pub updater: BaseAgentConfig,
-    /// Relayer configuration
-    pub relayer: BaseAgentConfig,
-    /// Processor configuration
-    pub processor: BaseAgentConfig,
-    /// Watcher configuration
-    pub watcher: BaseAgentConfig,
-    /// Kathy configuration
-    pub kathy: BaseAgentConfig,
+impl Default for LogConfig {
+    fn default() -> Self {
+        Self {
+            fmt: LogStyle::Pretty,
+            level: LogLevel::Trace,
+        }
+    }
 }
 
 #[cfg(test)]

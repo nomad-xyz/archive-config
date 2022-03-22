@@ -2,9 +2,9 @@
 
 use std::collections::HashSet;
 
-use crate::common::{NomadIdentifier, NomadLocator, Proxy};
+use nomad_types::deser_nomad_u64;
+use nomad_types::{NomadIdentifier, NomadLocator, Proxy};
 
-use crate::common::deser_nomad_number;
 use crate::network::CustomTokenSpecifier;
 
 /// Deploy-time custom tokens
@@ -30,7 +30,7 @@ pub struct DeployedCustomToken {
 #[serde(rename_all = "camelCase")]
 pub struct EvmBridgeContracts {
     /// Contract Deploy Height
-    #[serde(default, deserialize_with = "deser_nomad_number")]
+    #[serde(default, deserialize_with = "deser_nomad_u64")]
     pub deploy_height: u64,
     /// Bridge Route proxy
     pub bridge_router: Proxy,
@@ -81,10 +81,10 @@ pub struct BridgeConfiguration {
     pub customs: Option<HashSet<CustomTokenSpecifier>>,
     /// Amount of gas required to execute a `Transfer` message that DOST NOT
     /// cause contract deployment
-    #[serde(default, deserialize_with = "deser_nomad_number")]
+    #[serde(default, deserialize_with = "deser_nomad_u64")]
     pub mint_gas: u64,
     /// Amount of gas required to execute a `Transfer` message that DOES cause
     /// contract deployment
-    #[serde(default, deserialize_with = "deser_nomad_number")]
+    #[serde(default, deserialize_with = "deser_nomad_u64")]
     pub deploy_gas: u64,
 }

@@ -171,7 +171,8 @@
   "agent": {
     "ethereum": {
       "rpcStyle": "ethereum",
-      "db": "/usr/share/nomad",
+      "db": "db",
+      "metrics": 9090,
       "logging": {
         "level": "debug",
         "fmt": "json"
@@ -185,6 +186,7 @@
         "interval": 10
       },
       "processor": {
+        "indexOnly": false,
         "enabled": true,
         "interval": 5
       },
@@ -199,7 +201,8 @@
     },
     "moonbeam": {
       "rpcStyle": "ethereum",
-      "db": "/usr/share/nomad",
+      "db": "db",
+      "metrics": 9090,
       "logging": {
         "level": "debug",
         "fmt": "json"
@@ -213,6 +216,7 @@
         "interval": 10
       },
       "processor": {
+        "indexOnly": true,
         "enabled": true,
         "interval": 5
       },
