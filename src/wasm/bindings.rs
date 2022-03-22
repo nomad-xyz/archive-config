@@ -39,7 +39,7 @@ macro_rules! to_js_val {
 
 macro_rules! ret_config {
     ($config:expr) => {
-        to_js_val!($config.map_err(format_errs)?)
+        to_js_val!($config)
     };
 }
 
