@@ -21,9 +21,7 @@ macro_rules! deser {
 
 macro_rules! deser_config {
     ($val:ident) => {{
-        let config = deser!($val, crate::NomadConfig)
-            .chained_validate()
-            .map_err(format_errs)?;
+        let config = deser!($val, crate::NomadConfig);
         config
     }};
 }

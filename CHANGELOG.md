@@ -2,6 +2,11 @@
 
 ### Unreleased
 
+### v0.1.0-rc.5
+
+- fix: to allow TS deploys, bindings no longer perform config validation
+  on deserialization
+
 ### v0.1.0-rc.4
 
 - fix: expose config version number in TS type
